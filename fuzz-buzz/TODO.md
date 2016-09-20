@@ -7,4 +7,4 @@
 - [x] fn(5) = "Buzz"
 - [x] fn(10) = "Buzz"
 - [x] fn(15) = "FuzzBuzz"
-- [ ] fn(30) = "FuzzBuzz"
+- [x] fn(30) = "FuzzBuzz"

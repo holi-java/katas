@@ -24,5 +24,6 @@ public class FuzzBuzzTest {
 
   @Test public void fuzzBuzz() throws Exception {
     assertThat(FuzzBuzz.of(15), equalTo("FuzzBuzz"));
+    assertThat(FuzzBuzz.of(30), equalTo("FuzzBuzz"));
   }
 }
