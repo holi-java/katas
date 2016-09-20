@@ -12,14 +12,6 @@ public enum Radix {
     this.radix = radix;
   }
 
-  public int reduce(int number) {
-    return number - this.radix;
-  }
-
-  public boolean includedWith(int number) {
-    return this.radix <= number;
-  }
-
   public String compute(int number) {
     return repeat(times(number));
   }
