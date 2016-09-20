@@ -29,7 +29,7 @@ public class GcdTest {
   }
 
   @Test public void negative() throws Exception {
-    //assertThat(Gcd.of(-1, 2), equalTo(-1));
+    assertThat(Gcd.of(-1, 2), equalTo(-1));
     assertThat(Gcd.of(-2, 1), equalTo(-1));
   }
 
