@@ -21,9 +21,16 @@ public enum Radix {
   }
 
   public String compute(int number) {
-    int times = number / radix;
+    return repeat(times(number));
+  }
+
+  private String repeat(int times) {
     String result = "";
     for (int i = 0; i < times; i++) result += name();
     return result;
+  }
+
+  private int times(int number) {
+    return number / radix;
   }
 }
