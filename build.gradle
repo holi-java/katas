@@ -1,5 +1,19 @@
-group 'com.holi'
-version '1.0'
+allprojects {
+  group 'com.holi'
+  version '1.0'
+}
+
+subprojects {
+  apply plugin: 'java'
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    testCompile 'junit:junit:4.12'
+  }
+}
 
 apply plugin: 'idea'
 
