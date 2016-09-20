@@ -12,5 +12,6 @@ public class RadixTest {
     assertThat(Radix.I.compute(1), equalTo("I"));
     assertThat(Radix.I.compute(0), equalTo(""));
     assertThat(Radix.I.compute(2), equalTo("II"));
+    assertThat(Radix.V.compute(5), equalTo("V"));
   }
 }
