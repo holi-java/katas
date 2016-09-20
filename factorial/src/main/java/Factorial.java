@@ -5,11 +5,7 @@ public class Factorial {
   public static int of(final int n) {
     int i = 2;
     int result = n;
-    if (i < n) {
-      result *= i;
-      i++;
-    }
-    if (i < n) {
+    while (i < n) {
       result *= i;
       i++;
     }
