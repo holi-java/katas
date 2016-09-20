@@ -7,7 +7,7 @@ public class RomanConverter {
       return "I";
     }
     if (number == 2) {
-      return "I" + "I";
+      return convert(1) + convert(1);
     }
     return "";
   }
