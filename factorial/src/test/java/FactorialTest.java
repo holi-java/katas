@@ -10,4 +10,8 @@ public class FactorialTest {
   @Test public void one() throws Exception {
     assertThat(Factorial.of(1), equalTo(1));
   }
+
+  @Test public void two() throws Exception {
+    assertThat(Factorial.of(2), equalTo(2));
+  }
 }
