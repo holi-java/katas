@@ -32,7 +32,7 @@ public class PrimeFactorsTest {
     assertThat(PrimeFactors.of(8), is(asList(2, 2, 2)));
   }
 
-  @Ignore @Test public void sameFactors3() throws Exception {
+  @Test public void sameFactors3() throws Exception {
     assertThat(PrimeFactors.of(9), is(asList(3, 3)));
   }
 }
