@@ -9,7 +9,7 @@ public class Gcd {
       a = b;
       b = tmp;
     }
-    return sign * a;
+    return sign * Math.abs(a);
   }
 
   private static int sign(int a) {
