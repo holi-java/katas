@@ -1,7 +1,6 @@
-import java.util.Arrays;
-import java.util.Collections;
 import org.junit.Test;
 
+import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.hamcrest.CoreMatchers.is;
@@ -18,5 +17,9 @@ public class PrimeFactorsTest {
   @Test public void primeNumber() throws Exception {
     assertThat(PrimeFactors.of(2), is(singletonList(2)));
     assertThat(PrimeFactors.of(3), is(singletonList(3)));
+  }
+
+  @Test public void sameFactors() throws Exception {
+    assertThat(PrimeFactors.of(4), is(asList(2, 2)));
   }
 }
