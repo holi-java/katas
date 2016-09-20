@@ -27,4 +27,8 @@ public class GcdTest {
   @Test public void descendantInputs() throws Exception {
     assertThat(Gcd.of(4, 6), equalTo(2));
   }
+
+  @Test public void negative() throws Exception {
+    assertThat(Gcd.of(-1, 2), equalTo(-1));
+  }
 }
