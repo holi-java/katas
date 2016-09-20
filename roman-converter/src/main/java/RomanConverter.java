@@ -3,10 +3,9 @@
  */
 public class RomanConverter {
   public static String convert(int number) {
-    int candidate = 5;
-    String graph = "V";
-    if (number >= candidate) {
-      return graph + convert(number - candidate);
+    Radix radix = Radix.V;
+    if (number >= radix.radix) {
+      return radix.name() + convert(number - radix.radix);
     }
     if (number >= 4) {
       return "IV" + convert(number - 4);
@@ -15,5 +14,15 @@ public class RomanConverter {
       return "I" + convert(number - 1);
     }
     return "";
+  }
+
+  private enum Radix {
+    V(5);
+
+    private final int radix;
+
+    Radix(int radix) {
+      this.radix = radix;
+    }
   }
 }
