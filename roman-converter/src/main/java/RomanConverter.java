@@ -3,21 +3,10 @@
  */
 public class RomanConverter {
   public static String convert(int number) {
-    Radix radix;
-
-    radix = Radix.V;
-    if (number >= radix.radix) {
-      return radix.name() + convert(number - radix.radix);
-    }
-
-    radix = Radix.IV;
-    if (number >= radix.radix) {
-      return radix.name() + convert(number - radix.radix);
-    }
-
-    radix = Radix.I;
-    if (number >= radix.radix) {
-      return radix.name() + convert(number - radix.radix);
+    for (Radix radix : Radix.values()) {
+      if (number >= radix.radix) {
+        return radix.name() + convert(number - radix.radix);
+      }
     }
     return "";
   }
