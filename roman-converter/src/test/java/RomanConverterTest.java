@@ -30,4 +30,8 @@ public class RomanConverterTest {
   @Test public void five() throws Exception {
     assertThat(RomanConverter.convert(5), equalTo("V"));
   }
+
+  @Test public void six() throws Exception {
+    assertThat(RomanConverter.convert(6), equalTo("VI"));
+  }
 }
