@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static java.util.Arrays.asList;
@@ -19,7 +20,7 @@ public class PrimeFactorsTest {
     assertThat(PrimeFactors.of(3), is(singletonList(3)));
   }
 
-  @Test public void sameFactors() throws Exception {
+  @Test public void sameFactors2() throws Exception {
     assertThat(PrimeFactors.of(4), is(asList(2, 2)));
   }
 
@@ -29,5 +30,9 @@ public class PrimeFactorsTest {
 
   @Test public void same3Factors() throws Exception {
     assertThat(PrimeFactors.of(8), is(asList(2, 2, 2)));
+  }
+
+  @Ignore @Test public void sameFactors3() throws Exception {
+    assertThat(PrimeFactors.of(9), is(asList(3, 3)));
   }
 }
