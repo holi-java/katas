@@ -6,5 +6,5 @@
 - [x] fn(6) = "Fuzz"
 - [x] fn(5) = "Buzz"
 - [x] fn(10) = "Buzz"
-- [ ] fn(15) = "FuzzBuzz"
+- [x] fn(15) = "FuzzBuzz"
 - [ ] fn(30) = "FuzzBuzz"
