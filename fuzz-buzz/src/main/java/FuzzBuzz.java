@@ -3,7 +3,7 @@
  */
 public class FuzzBuzz {
   public static String of(int n) {
-    if (n == 3) return "Fuzz";
+    if (n % 3 == 0) return "Fuzz";
     return String.valueOf(n);
   }
 }
