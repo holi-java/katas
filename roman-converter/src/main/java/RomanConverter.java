@@ -9,7 +9,7 @@ public class RomanConverter {
     if (number == 4) {
       return "IV";
     }
-    if (number > 0) {
+    if (number >= 1) {
       return "I" + convert(number - 1);
     }
     return "";
