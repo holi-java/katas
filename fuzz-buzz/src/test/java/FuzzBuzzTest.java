@@ -11,4 +11,8 @@ public class FuzzBuzzTest {
     assertThat(FuzzBuzz.of(1), equalTo("1"));
     assertThat(FuzzBuzz.of(2), equalTo("2"));
   }
+
+  @Test public void fuzz() throws Exception {
+    assertThat(FuzzBuzz.of(3), equalTo("Fuzz"));
+  }
 }

@@ -2,7 +2,7 @@
 
 - [x] fn(1) = "1"
 - [x] fn(2) = "2"
-- [ ] fn(3) = "Fuzz"
+- [x] fn(3) = "Fuzz"
 - [ ] fn(6) = "Fuzz"
 - [ ] fn(5) = "Buzz"
 - [ ] fn(10) = "Buzz"
