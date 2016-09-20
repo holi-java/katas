@@ -4,10 +4,11 @@
 public class Gcd {
   public static int of(int a, int b) {
     if (b != 0) {
-      if (a % b == 0) {
+      int tmp = a % b;
+      if (tmp == 0) {
         a = b;
       } else {
-        a = a % b;
+        a = tmp;
       }
     }
     return a;
