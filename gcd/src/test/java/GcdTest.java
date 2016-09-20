@@ -14,4 +14,8 @@ public class GcdTest {
   @Test public void zeros() throws Exception {
     assertThat(Gcd.of(0, 0), equalTo(0));
   }
+
+  @Test public void oneOfTheCommonDivisor() throws Exception {
+    assertThat(Gcd.of(4, 2), equalTo(2));
+  }
 }
