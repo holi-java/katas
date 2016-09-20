@@ -4,14 +4,15 @@
 public class Factorial {
   public static int of(final int n) {
     int i = 2;
+    int result = n;
     if (i < n) {
-      n *= i;
+      result *= i;
       i++;
     }
     if (i < n) {
-      n *= i;
+      result *= i;
       i++;
     }
-    return n;
+    return result;
   }
 }
