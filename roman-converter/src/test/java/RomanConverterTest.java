@@ -46,4 +46,8 @@ public class RomanConverterTest {
   @Test public void fifty() throws Exception {
     assertThat(RomanConverter.convert(50), equalTo("L"));
   }
+
+  @Test public void forty() throws Exception {
+    assertThat(RomanConverter.convert(40), equalTo("XL"));
+  }
 }

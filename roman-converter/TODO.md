@@ -10,7 +10,7 @@
 - [x] roman(10) = "X"
 - [x] roman(9) = "IX"
 - [x] roman(50) = "L"
-- [ ] roman(40) = "XL"
+- [x] roman(40) = "XL"
 - [ ] roman(100) = "C"
 - [ ] roman(90) = "XC"
 - [ ] roman(500) = "D"
