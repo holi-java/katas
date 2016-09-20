@@ -3,6 +3,7 @@
  */
 public class Fibonacci {
   public static int of(int n) {
-    return 1;
+    int result = 1;
+    return result;
   }
 }
