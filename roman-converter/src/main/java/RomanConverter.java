@@ -6,8 +6,8 @@ public class RomanConverter {
     if (number >= 5) {
       return "V" + convert(number - 5);
     }
-    if (number == 4) {
-      return "IV";
+    if (number >= 4) {
+      return "IV" + convert(number - 4);
     }
     if (number >= 1) {
       return "I" + convert(number - 1);
