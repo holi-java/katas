@@ -3,11 +3,11 @@
  */
 public class RomanConverter {
   public static String convert(int number) {
+    StringBuilder out = new StringBuilder();
     for (Radix radix : Radix.values()) {
-      if (radix.includedWith(number)) {
-        return radix.name() + convert(radix.reduce(number));
-      }
+      out.append(radix.compute(number));
+      number = radix.remaining(number);
     }
-    return "";
+    return out.toString();
   }
 }
