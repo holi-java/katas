@@ -4,9 +4,9 @@
 public class RomanConverter {
   public static String convert(int number) {
     StringBuilder out = new StringBuilder();
-    for (Radix radix : Radix.values()) {
-      out.append(radix.compute(number));
-      number = radix.remaining(number);
+    for (Symbol symbol : Symbol.values()) {
+      out.append(symbol.compute(number));
+      number = symbol.remaining(number);
     }
     return out.toString();
   }

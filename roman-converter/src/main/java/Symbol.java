@@ -1,7 +1,7 @@
 /**
  * Created by selonj on 16-9-21.
  */
-public enum Radix {
+public enum Symbol {
   M(1000),
   CM(900),
   D(500),
@@ -16,10 +16,10 @@ public enum Radix {
   IV(4),
   I(1);
 
-  private final int radix;
+  private final int value;
 
-  Radix(int radix) {
-    this.radix = radix;
+  Symbol(int value) {
+    this.value = value;
   }
 
   public String compute(int number) {
@@ -33,10 +33,10 @@ public enum Radix {
   }
 
   private int times(int number) {
-    return number / radix;
+    return number / value;
   }
 
   public int remaining(int number) {
-    return number % radix;
+    return number % value;
   }
 }
