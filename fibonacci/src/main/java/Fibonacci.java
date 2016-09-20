@@ -4,11 +4,14 @@
 public class Fibonacci {
   public static int of(int n) {
     int result = 1;
-    if (n > 2) {
+    int i = 2;
+    if (n > i) {
       result += 1;
+      i++;
     }
-    if (n > 3) {
+    if (n > i) {
       result += 1;
+      i++;
     }
     return result;
   }
