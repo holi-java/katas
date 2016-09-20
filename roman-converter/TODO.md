@@ -8,7 +8,7 @@
 - [x] roman(3) = "III"
 - [x] roman(6) = "VI"
 - [x] roman(10) = "X"
-- [ ] roman(9) = "IX"
+- [x] roman(9) = "IX"
 - [ ] roman(50) = "L"
 - [ ] roman(40) = "XL"
 - [ ] roman(100) = "C"

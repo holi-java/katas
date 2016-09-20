@@ -3,6 +3,7 @@
  */
 public enum Radix {
   X(10),
+  IX(9),
   V(5),
   IV(4),
   I(1);

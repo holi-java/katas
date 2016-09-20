@@ -38,4 +38,8 @@ public class RomanConverterTest {
   @Test public void ten() throws Exception {
     assertThat(RomanConverter.convert(10), equalTo("X"));
   }
+
+  @Test public void nine() throws Exception {
+    assertThat(RomanConverter.convert(9), equalTo("IX"));
+  }
 }
