@@ -10,5 +10,6 @@ public class RadixTest {
 
   @Test public void compute() throws Exception {
     assertThat(Radix.I.compute(1), equalTo("I"));
+    assertThat(Radix.I.compute(0), equalTo(""));
   }
 }
