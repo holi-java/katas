@@ -32,4 +32,8 @@ public class GcdTest {
     //assertThat(Gcd.of(-1, 2), equalTo(-1));
     assertThat(Gcd.of(-2, 1), equalTo(-1));
   }
+
+  @Test public void negative2() throws Exception {
+    assertThat(Gcd.of(1, -2), equalTo(-1));
+  }
 }
