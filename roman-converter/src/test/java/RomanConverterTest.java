@@ -20,7 +20,8 @@ public class RomanConverterTest {
     this.graph = graph;
   }
 
-  @Parameterized.Parameters public static Collection<Object[]> data() {
+  @Parameterized.Parameters(name = "{0} = {1}")
+  public static Collection<Object[]> data() {
     return Arrays.asList(
         expect(0).to(""),
         expect(1).to("I"),
@@ -32,7 +33,8 @@ public class RomanConverterTest {
         expect(10).to("X"),
         expect(9).to("IX"),
         expect(50).to("L"),
-        expect(40).to("XL")
+        expect(40).to("XL"),
+        expect(100).to("C")
     );
   }
 
