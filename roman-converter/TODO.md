@@ -1,0 +1,18 @@
+# Roman Converter KATAs
+
+- [ ] roman(0) = ""
+- [ ] roman(1) = "I"
+- [ ] roman(5) = "V"
+- [ ] roman(2) = "II"
+- [ ] roman(6) = "VI"
+- [ ] roman(10) = "X"
+- [ ] roman(9) = "IX"
+- [ ] roman(50) = "L"
+- [ ] roman(40) = "XL"
+- [ ] roman(100) = "C"
+- [ ] roman(90) = "XC"
+- [ ] roman(500) = "D"
+- [ ] roman(400) = "CD"
+- [ ] roman(1000) = "M"
+- [ ] roman(900) = "CM"
+- [ ] roman(4999) = "MMMMCMXCIX"
