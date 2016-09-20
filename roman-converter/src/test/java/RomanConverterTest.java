@@ -23,23 +23,24 @@ public class RomanConverterTest {
   @Parameterized.Parameters(name = "{0} = {1}")
   public static Collection<Object[]> data() {
     return Arrays.asList(
-        expect(0).to(""),
         expect(1).to("I"),
-        expect(2).to("II"),
-        expect(3).to("III"),
         expect(4).to("IV"),
         expect(5).to("V"),
-        expect(6).to("VI"),
-        expect(10).to("X"),
         expect(9).to("IX"),
-        expect(50).to("L"),
+        expect(10).to("X"),
         expect(40).to("XL"),
-        expect(100).to("C"),
+        expect(50).to("L"),
         expect(90).to("XC"),
-        expect(500).to("D"),
+        expect(100).to("C"),
         expect(400).to("CD"),
-        expect(1000).to("M"),
+        expect(500).to("D"),
         expect(900).to("CM"),
+        expect(1000).to("M"),
+
+        expect(0).to(""),
+        expect(2).to("II"),
+        expect(3).to("III"),
+        expect(6).to("VI"),
         expect(4999).to("MMMMCMXCIX")
     );
   }
