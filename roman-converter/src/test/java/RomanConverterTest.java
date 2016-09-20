@@ -34,4 +34,8 @@ public class RomanConverterTest {
   @Test public void six() throws Exception {
     assertThat(RomanConverter.convert(6), equalTo("VI"));
   }
+
+  @Test public void ten() throws Exception {
+    assertThat(RomanConverter.convert(10), equalTo("X"));
+  }
 }
