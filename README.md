@@ -7,6 +7,7 @@
 - [Fibonacci](fibonacci)
 - [Factorial](factorial)
 - [Fuzz Buzz](fuzz-buzz)
+- [Roman Converter](roman-converter)
 
 [travis_url]: https://travis-ci.org/holi-java/katas
 [travis_status_icon]: https://travis-ci.org/holi-java/katas.svg
