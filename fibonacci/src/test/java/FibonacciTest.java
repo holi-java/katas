@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -13,5 +14,9 @@ public class FibonacciTest {
 
   @Test public void two() throws Exception {
     assertThat(Fibonacci.of(2), equalTo(1));
+  }
+
+  @Ignore @Test public void three() throws Exception {
+    assertThat(Fibonacci.of(3), equalTo(Fibonacci.of(1) + Fibonacci.of(2)));
   }
 }
