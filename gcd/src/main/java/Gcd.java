@@ -6,8 +6,8 @@ public class Gcd {
     while (b != 0) {
       int tmp = a % b;
       a = b;
+      b = tmp;
       if (tmp != 0) {
-        b = tmp;
       } else {
         break;
       }
