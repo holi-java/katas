@@ -20,7 +20,7 @@ public class GcdTest {
     assertThat(Gcd.of(2, 4), equalTo(2));
   }
 
-  @Test public void gcd() throws Exception {
+  @Test public void ascendantInputs() throws Exception {
     assertThat(Gcd.of(6, 4), equalTo(2));
   }
 }
