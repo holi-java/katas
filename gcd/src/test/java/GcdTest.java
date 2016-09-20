@@ -23,4 +23,8 @@ public class GcdTest {
   @Test public void ascendantInputs() throws Exception {
     assertThat(Gcd.of(6, 4), equalTo(2));
   }
+
+  @Test public void descendantInputs() throws Exception {
+    assertThat(Gcd.of(4, 6), equalTo(2));
+  }
 }

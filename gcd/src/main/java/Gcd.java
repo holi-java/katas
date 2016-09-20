@@ -3,12 +3,14 @@
  */
 public class Gcd {
   public static int of(int a, int b) {
-    if (b != 0) {
+    while (b != 0) {
       int tmp = a % b;
       if (tmp == 0) {
         a = b;
+        break;
       } else {
-        a = tmp;
+        a = b;
+        b = tmp;
       }
     }
     return a;
