@@ -4,7 +4,9 @@
 public class Gcd {
   public static int of(int a, int b) {
     if (b != 0) {
-      a = b;
+      if (a % b == 0) {
+        a = b;
+      }
     }
     return a;
   }
