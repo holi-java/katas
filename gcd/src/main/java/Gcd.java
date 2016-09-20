@@ -3,13 +3,16 @@
  */
 public class Gcd {
   public static int of(int a, int b) {
-    int sign = sign(a) * sign(b);
+    return sign(a) * sign(b) * unsigned(a, b);
+  }
+
+  public static int unsigned(int a, int b) {
     while (b != 0) {
       int tmp = a % b;
       a = b;
       b = tmp;
     }
-    return sign * Math.abs(a);
+    return Math.abs(a);
   }
 
   private static int sign(int a) {
