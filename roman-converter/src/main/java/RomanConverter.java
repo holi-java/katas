@@ -6,12 +6,6 @@ public class RomanConverter {
     if (number > 0) {
       return "I" + convert(number - 1);
     }
-    if (number > 0) {
-      return "I" + convert(number - 1);
-    }
-    if (number > 0) {
-      return "I" + convert(number - 1);
-    }
     return "";
   }
 }
