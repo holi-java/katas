@@ -1,3 +1,6 @@
+group 'com.holi'
+version '1.0'
+
 apply plugin: 'idea'
 
 idea.module.excludeDirs += ['.idea', '.gradle', 'gradle'].collect { return file(it); };
