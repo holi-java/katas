@@ -7,13 +7,11 @@ import java.util.List;
 public class PrimeFactors {
   public static List<Integer> of(int n) {
     List<Integer> primes = new ArrayList<>();
-    int candidate = 2;
-    while (n > 1) {
+    for (int candidate = 2; n > 1; candidate++) {
       while (n % candidate == 0) {
         primes.add(candidate);
         n /= candidate;
       }
-      candidate++;
     }
     return primes;
   }
