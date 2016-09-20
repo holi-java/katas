@@ -3,6 +3,6 @@
  */
 public class Gcd {
   public static int of(int a, int b) {
-    return 1;
+    return a;
   }
 }

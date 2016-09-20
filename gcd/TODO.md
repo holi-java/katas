@@ -1,7 +1,7 @@
 # Greatest Common Divisor TODOs
 
 - [x] gcd(1,1) = 1
-- [ ] gcd(0,0) = 0
+- [x] gcd(0,0) = 0
 - [ ] gcd(4,2) = 2
 - [ ] gcd(2,4) = 2
 - [ ] gcd(6,4) = 2

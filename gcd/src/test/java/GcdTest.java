@@ -10,4 +10,8 @@ public class GcdTest {
   @Test public void ones() throws Exception {
     assertThat(Gcd.of(1, 1), equalTo(1));
   }
+
+  @Test public void zeros() throws Exception {
+    assertThat(Gcd.of(0, 0), equalTo(0));
+  }
 }
