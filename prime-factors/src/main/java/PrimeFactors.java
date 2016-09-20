@@ -12,9 +12,9 @@ public class PrimeFactors {
         primes.add(2);
         n /= 2;
       }
-      if (n > 1) {
-        primes.add(n);
-      }
+    }
+    if (n > 1) {
+      primes.add(n);
     }
     return primes;
   }
