@@ -3,13 +3,13 @@
  */
 public class RomanConverter {
   public static String convert(int number) {
-    if (number == 1) {
+    if (number > 0) {
       return "I" + convert(number - 1);
     }
-    if (number == 2) {
+    if (number > 0) {
       return "I" + convert(number - 1);
     }
-    if (number == 3) {
+    if (number > 0) {
       return "I" + convert(number - 1);
     }
     return "";
