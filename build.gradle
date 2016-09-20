@@ -1,5 +1,11 @@
-group 'com.holi'
-version '1.0'
+allprojects {
+  group 'com.holi'
+  version '1.0'
+}
+
+subprojects {
+  apply plugin: 'java'
+}
 
 apply plugin: 'idea'
 
