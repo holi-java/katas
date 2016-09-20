@@ -3,6 +3,6 @@
  */
 public class FuzzBuzz {
   public static String of(int n) {
-    return "1";
+    return String.valueOf(n);
   }
 }

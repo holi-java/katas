@@ -1,7 +1,7 @@
 # Fuzz Buzz TODOs
 
 - [x] fn(1) = "1"
-- [ ] fn(2) = "2"
+- [x] fn(2) = "2"
 - [ ] fn(3) = "Fuzz"
 - [ ] fn(6) = "Fuzz"
 - [ ] fn(5) = "Buzz"
