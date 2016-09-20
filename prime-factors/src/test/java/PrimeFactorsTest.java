@@ -26,4 +26,8 @@ public class PrimeFactorsTest {
   @Test public void diffFactors() throws Exception {
     assertThat(PrimeFactors.of(6), is(asList(2, 3)));
   }
+
+  @Test public void same3Factors() throws Exception {
+    assertThat(PrimeFactors.of(8), is(asList(2, 2, 2)));
+  }
 }
