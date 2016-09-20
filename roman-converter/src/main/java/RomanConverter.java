@@ -4,13 +4,13 @@
 public class RomanConverter {
   public static String convert(int number) {
     if (number == 1) {
-      return "I";
+      return "I" + convert(0);
     }
     if (number == 2) {
-      return convert(1) + convert(1);
+      return "I" + convert(1);
     }
     if (number == 3) {
-      return convert(1) + convert(2);
+      return "I" + convert(2);
     }
     return "";
   }
