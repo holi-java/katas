@@ -22,25 +22,37 @@ public class RomanConverterTest {
 
   @Parameterized.Parameters public static Collection<Object[]> data() {
     return Arrays.asList(
-        test(0, ""),
-        test(1, "I"),
-        test(2, "II"),
-        test(3, "III"),
-        test(4, "IV"),
-        test(5, "V"),
-        test(6, "VI"),
-        test(10, "X"),
-        test(9, "IX"),
-        test(50, "L"),
-        test(40, "XL")
+        expect(0).to(""),
+        expect(1).to("I"),
+        expect(2).to("II"),
+        expect(3).to("III"),
+        expect(4).to("IV"),
+        expect(5).to("V"),
+        expect(6).to("VI"),
+        expect(10).to("X"),
+        expect(9).to("IX"),
+        expect(50).to("L"),
+        expect(40).to("XL")
     );
   }
 
-  private static Object[] test(int number, String graph) {
-    return new Object[] {number, graph};
+  private static ExpectationBuilder expect(int number) {
+    return new ExpectationBuilder(number);
   }
 
   @Test public void convert() throws Exception {
     assertThat(RomanConverter.convert(number), equalTo(graph));
+  }
+
+  private static class ExpectationBuilder {
+    private int number;
+
+    public ExpectationBuilder(int number) {
+      this.number = number;
+    }
+
+    public Object[] to(String graph) {
+      return new Object[] {number, graph};
+    }
   }
 }
