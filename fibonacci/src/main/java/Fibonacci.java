@@ -5,11 +5,7 @@ public class Fibonacci {
   public static int of(int n) {
     int result = 1;
     int i = 2;
-    if (n > i) {
-      result += 1;
-      i++;
-    }
-    if (n > i) {
+    while (n > i) {
       result += 1;
       i++;
     }
