@@ -22,4 +22,8 @@ public class RomanConverterTest {
   @Test public void three() throws Exception {
     assertThat(RomanConverter.convert(3), equalTo("III"));
   }
+
+  @Test public void four() throws Exception {
+    assertThat(RomanConverter.convert(4), equalTo("IV"));
+  }
 }
