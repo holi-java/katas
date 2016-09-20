@@ -3,21 +3,29 @@
  */
 public class RomanConverter {
   public static String convert(int number) {
-    Radix radix = Radix.V;
+    Radix radix;
+
+    radix = Radix.V;
     if (number >= radix.radix) {
       return radix.name() + convert(number - radix.radix);
     }
-    if (number >= 4) {
-      return "IV" + convert(number - 4);
+
+    radix = Radix.IV;
+    if (number >= radix.radix) {
+      return radix.name() + convert(number - radix.radix);
     }
-    if (number >= 1) {
-      return "I" + convert(number - 1);
+
+    radix = Radix.I;
+    if (number >= radix.radix) {
+      return radix.name() + convert(number - radix.radix);
     }
     return "";
   }
 
   private enum Radix {
-    V(5);
+    V(5),
+    IV(4),
+    I(1);
 
     private final int radix;
 
