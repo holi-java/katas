@@ -3,8 +3,11 @@
  */
 public class RomanConverter {
   public static String convert(int number) {
-    if (number != 0) {
+    if (number == 1) {
       return "I";
+    }
+    if (number == 2) {
+      return "II";
     }
     return "";
   }
