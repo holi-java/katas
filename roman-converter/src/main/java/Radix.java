@@ -33,4 +33,8 @@ public enum Radix {
   private int times(int number) {
     return number / radix;
   }
+
+  public int remaining(int number) {
+    return 0;
+  }
 }

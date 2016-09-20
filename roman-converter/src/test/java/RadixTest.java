@@ -14,4 +14,8 @@ public class RadixTest {
     assertThat(Radix.I.compute(2), equalTo("II"));
     assertThat(Radix.V.compute(5), equalTo("V"));
   }
+
+  @Test public void remaining() throws Exception {
+    assertThat(Radix.I.remaining(1), equalTo(0));
+  }
 }
