@@ -7,6 +7,9 @@ public class Fibonacci {
     if (n > 2) {
       result += 1;
     }
+    if (n > 3) {
+      result += 1;
+    }
     return result;
   }
 }
