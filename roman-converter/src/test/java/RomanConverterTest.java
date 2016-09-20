@@ -22,18 +22,22 @@ public class RomanConverterTest {
 
   @Parameterized.Parameters public static Collection<Object[]> data() {
     return Arrays.asList(
-        new Object[] {0, ""},
-        new Object[] {1, "I"},
-        new Object[] {2, "II"},
-        new Object[] {3, "III"},
-        new Object[] {4, "IV"},
-        new Object[] {5, "V"},
-        new Object[] {6, "VI"},
-        new Object[] {10, "X"},
-        new Object[] {9, "IX"},
-        new Object[] {50, "L"},
-        new Object[] {40, "XL"}
+        test(0, ""),
+        test(1, "I"),
+        test(2, "II"),
+        test(3, "III"),
+        test(4, "IV"),
+        test(5, "V"),
+        test(6, "VI"),
+        test(10, "X"),
+        test(9, "IX"),
+        test(50, "L"),
+        test(40, "XL")
     );
+  }
+
+  private static Object[] test(int number, String graph) {
+    return new Object[] {number, graph};
   }
 
   @Test public void convert() throws Exception {
