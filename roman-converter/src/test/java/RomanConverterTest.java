@@ -1,4 +1,8 @@
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -6,9 +10,24 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by selonj on 16-9-21.
  */
+@RunWith(Parameterized.class)
 public class RomanConverterTest {
+  private final int number;
+  private final String graph;
+
+  public RomanConverterTest(int number, String graph) {
+    this.number = number;
+    this.graph = graph;
+  }
+
+  @Parameterized.Parameters public static Collection<Object[]> data() {
+    return Arrays.asList(new Object[][] {
+        new Object[] {0, ""}
+    });
+  }
+
   @Test public void zero() throws Exception {
-    assertThat(RomanConverter.convert(0), equalTo(""));
+    assertThat(RomanConverter.convert(number), equalTo(graph));
   }
 
   @Test public void one() throws Exception {
