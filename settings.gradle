@@ -1,4 +1,4 @@
 include 'gcd'
 include 'prime-factors'
 include 'fibonacci'
-
+include 'factorial'
