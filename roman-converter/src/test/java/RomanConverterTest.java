@@ -21,7 +21,7 @@ public class RomanConverterTest {
   }
 
   @Parameterized.Parameters public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {
+    return Arrays.asList(
         new Object[] {0, ""},
         new Object[] {1, "I"},
         new Object[] {2, "II"},
@@ -32,8 +32,8 @@ public class RomanConverterTest {
         new Object[] {10, "X"},
         new Object[] {9, "IX"},
         new Object[] {50, "L"},
-        new Object[] {40, "XL"},
-    });
+        new Object[] {40, "XL"}
+    );
   }
 
   @Test public void convert() throws Exception {
