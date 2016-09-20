@@ -18,4 +18,8 @@ public class RomanConverterTest {
   @Test public void two() throws Exception {
     assertThat(RomanConverter.convert(2), equalTo("II"));
   }
+
+  @Test public void three() throws Exception {
+    assertThat(RomanConverter.convert(3), equalTo("III"));
+  }
 }

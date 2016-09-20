@@ -4,7 +4,7 @@
 - [x] roman(1) = "I"
 - [ ] roman(5) = "V"
 - [x] roman(2) = "II"
-- [ ] roman(3) = "III"
+- [x] roman(3) = "III"
 - [ ] roman(6) = "VI"
 - [ ] roman(10) = "X"
 - [ ] roman(9) = "IX"
