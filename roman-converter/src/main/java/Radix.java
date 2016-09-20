@@ -19,4 +19,8 @@ public enum Radix {
   public boolean includedWith(int number) {
     return this.radix <= number;
   }
+
+  public String compute(int number) {
+    return "I";
+  }
 }
