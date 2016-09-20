@@ -10,4 +10,8 @@ public class FibonacciTest {
   @Test public void one() throws Exception {
     assertThat(Fibonacci.of(1), equalTo(1));
   }
+
+  @Test public void two() throws Exception {
+    assertThat(Fibonacci.of(2), equalTo(1));
+  }
 }
