@@ -6,6 +6,8 @@ public class Gcd {
     if (b != 0) {
       if (a % b == 0) {
         a = b;
+      } else {
+        a = a % b;
       }
     }
     return a;

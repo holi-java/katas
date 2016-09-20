@@ -19,4 +19,8 @@ public class GcdTest {
     assertThat(Gcd.of(4, 2), equalTo(2));
     assertThat(Gcd.of(2, 4), equalTo(2));
   }
+
+  @Test public void gcd() throws Exception {
+    assertThat(Gcd.of(6, 4), equalTo(2));
+  }
 }
