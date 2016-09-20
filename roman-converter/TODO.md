@@ -1,6 +1,6 @@
 # Roman Converter KATAs
 
-- [ ] roman(0) = ""
+- [x] roman(0) = ""
 - [ ] roman(1) = "I"
 - [ ] roman(5) = "V"
 - [ ] roman(2) = "II"
