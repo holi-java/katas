@@ -4,10 +4,8 @@
 public class Fibonacci {
   public static int of(int n) {
     int result = 1;
-    int i = 2;
-    while (n > i) {
+    for (int i = 2; i < n; i++) {
       result += 1;
-      i++;
     }
     return result;
   }
