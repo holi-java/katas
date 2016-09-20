@@ -2,6 +2,7 @@
  * Created by selonj on 16-9-21.
  */
 public enum Radix {
+  L(50),
   X(10),
   IX(9),
   V(5),
