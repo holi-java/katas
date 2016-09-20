@@ -22,8 +22,8 @@ public enum Radix {
 
   public String compute(int number) {
     String result = "";
-    if (number == 1) result = "I";
-    if (number == 2) result = "II";
+    if (number >= 1) result = "I";
+    if (number >= 2) result = "I" + "I";
     return result;
   }
 }
