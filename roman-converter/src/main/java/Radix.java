@@ -22,11 +22,7 @@ public enum Radix {
 
   public String compute(int number) {
     String result = "";
-    int i = 1;
-    while (number >= i) {
-      result += "I";
-      i++;
-    }
+    for (int i = 0; i < number; i++) result += "I";
     return result;
   }
 }
