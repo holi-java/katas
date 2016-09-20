@@ -37,7 +37,8 @@ public class RomanConverterTest {
         expect(100).to("C"),
         expect(90).to("XC"),
         expect(500).to("D"),
-        expect(400).to("CD")
+        expect(400).to("CD"),
+        expect(1000).to("M")
     );
   }
 
