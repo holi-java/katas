@@ -3,11 +3,14 @@
  */
 public class Factorial {
   public static int of(int n) {
-    if (n > 3) {
-      n *= 3;
+    int i = 3;
+    if (n > i) {
+      n *= i;
+      i--;
     }
-    if (n > 2) {
-      n *= 2;
+    if (n > i) {
+      n *= i;
+      i--;
     }
     return n;
   }
