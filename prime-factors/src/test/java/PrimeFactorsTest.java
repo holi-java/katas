@@ -17,5 +17,6 @@ public class PrimeFactorsTest {
 
   @Test public void primeNumber() throws Exception {
     assertThat(PrimeFactors.of(2), is(singletonList(2)));
+    assertThat(PrimeFactors.of(3), is(singletonList(3)));
   }
 }
