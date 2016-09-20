@@ -7,10 +7,6 @@ public class Gcd {
       int tmp = a % b;
       a = b;
       b = tmp;
-      if (tmp != 0) {
-      } else {
-        break;
-      }
     }
     return a;
   }
