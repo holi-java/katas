@@ -3,7 +3,7 @@
 - [x] roman(0) = ""
 - [x] roman(1) = "I"
 - [x] roman(4) = "IV"
-- [ ] roman(5) = "V"
+- [x] roman(5) = "V"
 - [x] roman(2) = "II"
 - [x] roman(3) = "III"
 - [ ] roman(6) = "VI"
