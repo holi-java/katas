@@ -17,4 +17,4 @@
 - [x] roman(400) = "CD"
 - [x] roman(1000) = "M"
 - [x] roman(900) = "CM"
-- [ ] roman(4999) = "MMMMCMXCIX"
+- [x] roman(4999) = "MMMMCMXCIX"
