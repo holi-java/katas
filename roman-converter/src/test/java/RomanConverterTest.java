@@ -26,7 +26,7 @@ public class RomanConverterTest {
     });
   }
 
-  @Test public void zero() throws Exception {
+  @Test public void convert() throws Exception {
     assertThat(RomanConverter.convert(number), equalTo(graph));
   }
 
