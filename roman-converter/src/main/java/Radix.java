@@ -35,6 +35,6 @@ public enum Radix {
   }
 
   public int remaining(int number) {
-    return 0;
+    return number - radix;
   }
 }
