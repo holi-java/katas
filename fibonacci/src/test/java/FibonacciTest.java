@@ -16,7 +16,7 @@ public class FibonacciTest {
     assertThat(Fibonacci.of(2), equalTo(1));
   }
 
-  @Ignore @Test public void three() throws Exception {
+  @Test public void three() throws Exception {
     assertThat(Fibonacci.of(3), equalTo(Fibonacci.of(1) + Fibonacci.of(2)));
   }
 }
