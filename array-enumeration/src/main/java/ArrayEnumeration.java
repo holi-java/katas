@@ -5,15 +5,18 @@ import java.util.Enumeration;
  */
 public class ArrayEnumeration<E> implements Enumeration<E> {
   private E element;
+  private E[] elements;
 
   public ArrayEnumeration() {
   }
 
   public ArrayEnumeration(E element) {
-    this.element = element;
+    this((E[]) new Object[] {element});
   }
 
   public ArrayEnumeration(E... elements) {
+    this.element = elements[0];
+    this.elements = elements;
   }
 
   @Override public boolean hasMoreElements() {
