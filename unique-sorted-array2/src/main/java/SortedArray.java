@@ -5,7 +5,7 @@ public class SortedArray {
   public static int[] unique(int[] array) {
     int[] result = new int[array.length];
     int i = 0;
-    if (array.length > i) {
+    while (array.length > i) {
       result[i] = array[i];
       i++;
     }
