@@ -8,7 +8,8 @@ public class SortedArray {
     if (array.length > i) {
       result[i] = array[i];
     }
-    int j = i + 1;
+    i++;
+    int j = i;
     if (array.length > j) {
       result[j] = array[j];
     }
