@@ -1,4 +1,4 @@
-# Fibonacci KATAs
+# Fibonacci TODOs
 
 - [x] fn(1) = 1
 - [x] fn(2) = 1

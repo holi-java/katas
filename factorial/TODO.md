@@ -1,4 +1,4 @@
-# Factorial KATAs
+# Factorial TODOs
 
 - [x] fn(1) = 1
 - [x] fn(2) = 2

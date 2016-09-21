@@ -1,4 +1,4 @@
-# Unique Sorted Array KATAs
+# Unique Sorted Array TODOs
 
 - [x] unique([]) = []
 - [x] unique([0]) = [0]
