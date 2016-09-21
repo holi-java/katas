@@ -4,9 +4,7 @@
 public class SortedArray {
   public static int[] unique(int[] array) {
     int[] result = new int[array.length];
-    for (int i=0;array.length > i;i++) {
-      result[i] = array[i];
-    }
+    System.arraycopy(array, 0, result, 0, array.length);
     return result;
   }
 }
