@@ -7,7 +7,7 @@ public class SortedArray {
     int[] result = new int[array.length];
 
     int i = 0;
-    if (array.length > i) {
+    while (array.length > i) {
       result[i] = array[i];
       i++;
     }
