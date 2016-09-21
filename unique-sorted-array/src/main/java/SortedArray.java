@@ -10,7 +10,9 @@ public class SortedArray {
     int n = 0;
 
     for (int i = 0; i < array.length; i++) {
-      result[n++] = array[i];
+      if (i == 0 || array[i - 1] != array[i]) {
+        result[n++] = array[i];
+      }
     }
 
     return Arrays.copyOf(result, n);
