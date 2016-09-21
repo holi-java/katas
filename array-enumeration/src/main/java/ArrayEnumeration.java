@@ -8,10 +8,6 @@ public class ArrayEnumeration<E> implements Enumeration<E> {
   private E[] elements;
   private int i;
 
-  public ArrayEnumeration(E element) {
-    this((E[]) new Object[] {element});
-  }
-
   public ArrayEnumeration(E... elements) {
     this.elements = elements;
   }
