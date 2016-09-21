@@ -1,4 +1,5 @@
 import java.util.Enumeration;
+import java.util.NoSuchElementException;
 
 /**
  * Created by selonj on 16-9-22.
@@ -8,23 +9,20 @@ public class ArrayEnumeration<E> implements Enumeration<E> {
   private E[] elements;
   private int i;
 
-  public ArrayEnumeration() {
-  }
-
   public ArrayEnumeration(E element) {
     this((E[]) new Object[] {element});
   }
 
   public ArrayEnumeration(E... elements) {
-    this.element = elements[0];
     this.elements = elements;
   }
 
   @Override public boolean hasMoreElements() {
-    return element != null;
+    return i < elements.length;
   }
 
   @Override public E nextElement() {
+    if (!hasMoreElements()) throw new NoSuchElementException();
     element = null;
     return elements[i++];
   }

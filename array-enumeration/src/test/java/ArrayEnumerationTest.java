@@ -1,3 +1,4 @@
+import java.util.NoSuchElementException;
 import org.junit.Ignore;
 import org.junit.Test;
 
@@ -5,6 +6,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * Created by selonj on 16-9-22.
@@ -37,5 +39,16 @@ public class ArrayEnumerationTest {
 
     assertThat(it.nextElement(), equalTo(1));
     assertThat(it.nextElement(), equalTo(2));
+  }
+
+  @Test public void raisingNoSuchElementIfNoMoreSuccessiveElements() throws Exception {
+    ArrayEnumeration it = new ArrayEnumeration();
+
+    try {
+      it.nextElement();
+      fail("there is no successive elements");
+    } catch (NoSuchElementException expected) {
+      assertTrue(true);
+    }
   }
 }
