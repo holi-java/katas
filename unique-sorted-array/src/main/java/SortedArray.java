@@ -10,8 +10,12 @@ public class SortedArray {
     int n = 0;
 
     for (int i = 0; i < array.length; i++) {
-      if (i == 0 || array[i - 1] != array[i]) {
+      if (i == 0) {
         result[n++] = array[i];
+      } else {
+        if (array[i - 1] != array[i]) {
+          result[n++] = array[i];
+        }
       }
     }
 
