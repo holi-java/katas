@@ -28,4 +28,8 @@ public class UniqueSortedArrayTest {
     assertThat(SortedArray.unique(new int[] {1, 1}), equalTo(new int[] {1}));
     assertThat(SortedArray.unique(new int[] {1, 1, 1}), equalTo(new int[] {1}));
   }
+
+  @Test public void duplication() throws Exception {
+    assertThat(SortedArray.unique(new int[] {1, 2, 2, 3}), equalTo(new int[] {1, 2, 3}));
+  }
 }
