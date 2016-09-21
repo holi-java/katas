@@ -10,12 +10,8 @@ public class SortedArray {
     int n = 0;
     int prev = 0;
     for (int current : array) {
-      if (n == 0) {
+      if (n == 0 || prev != current) {
         prev = result[n++] = current;
-      } else {
-        if (prev != current) {
-          prev = result[n++] = current;
-        }
       }
     }
 
