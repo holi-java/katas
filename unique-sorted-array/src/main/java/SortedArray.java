@@ -9,12 +9,12 @@ public class SortedArray {
     int[] result = new int[array.length];
     int n = 0;
     int prev = 0;
-    for (int i = 0; i < array.length; i++) {
+    for (int current : array) {
       if (n == 0) {
-        prev = result[n++] = array[i];
+        prev = result[n++] = current;
       } else {
-        if (prev != array[i]) {
-          prev = result[n++] = array[i];
+        if (prev != current) {
+          prev = result[n++] = current;
         }
       }
     }
