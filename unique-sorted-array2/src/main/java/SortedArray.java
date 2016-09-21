@@ -3,6 +3,10 @@
  */
 public class SortedArray {
   public static int[] unique(int[] array) {
-    return new int[array.length];
+    int[] result = new int[array.length];
+    if (array.length > 0) {
+      result[0] = array[0];
+    }
+    return result;
   }
 }
