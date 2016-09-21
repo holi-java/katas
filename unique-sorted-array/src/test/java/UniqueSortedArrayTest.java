@@ -26,5 +26,6 @@ public class UniqueSortedArrayTest {
 
   @Test public void same() throws Exception {
     assertThat(SortedArray.unique(new int[] {1, 1}), equalTo(new int[] {1}));
+    assertThat(SortedArray.unique(new int[] {1, 1, 1}), equalTo(new int[] {1}));
   }
 }
