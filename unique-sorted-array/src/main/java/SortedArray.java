@@ -11,9 +11,8 @@ public class SortedArray {
       result[i] = array[i];
     }
     i++;
-    int j = i;
-    if (array.length > j) {
-      result[j] = array[j];
+    if (array.length > i) {
+      result[i] = array[i];
     }
 
     return result;
