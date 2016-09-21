@@ -13,7 +13,7 @@ import static org.junit.Assert.fail;
  */
 public class ArrayEnumerationTest {
   @Test public void hasNoMoreElementsOfAnyEmptyArrayEnumeration() throws Exception {
-    ArrayEnumeration it = new ArrayEnumeration();
+    ArrayEnumeration<?> it = new ArrayEnumeration<>();
 
     assertFalse(it.hasMoreElements());
   }
@@ -42,7 +42,7 @@ public class ArrayEnumerationTest {
   }
 
   @Test public void raisingNoSuchElementIfNoMoreSuccessiveElements() throws Exception {
-    ArrayEnumeration it = new ArrayEnumeration();
+    ArrayEnumeration<?> it = new ArrayEnumeration<>();
 
     try {
       it.nextElement();
