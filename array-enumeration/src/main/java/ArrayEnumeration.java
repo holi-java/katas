@@ -6,6 +6,7 @@ import java.util.Enumeration;
 public class ArrayEnumeration<E> implements Enumeration<E> {
   private E element;
   private E[] elements;
+  private int i;
 
   public ArrayEnumeration() {
   }
@@ -24,8 +25,7 @@ public class ArrayEnumeration<E> implements Enumeration<E> {
   }
 
   @Override public E nextElement() {
-    E result = element;
     element = null;
-    return result;
+    return elements[i++];
   }
 }

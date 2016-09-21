@@ -32,7 +32,7 @@ public class ArrayEnumerationTest {
     assertTrue("has elements", it.hasMoreElements());
   }
 
-  @Test @Ignore public void successiveElementsOneAtATime() throws Exception {
+  @Test public void successiveElementsOneAtATime() throws Exception {
     ArrayEnumeration<Integer> it = new ArrayEnumeration<>(1, 2);
 
     assertThat(it.nextElement(), equalTo(1));
