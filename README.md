@@ -9,6 +9,7 @@
 - [Fuzz Buzz](fuzz-buzz)
 - [Roman Converter](roman-converter)
 - [Unique Sorted Array](unique-sorted-array)
+- [Array Enumeration](array-enumeration)
 
 #Summary 
 
