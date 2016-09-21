@@ -3,8 +3,9 @@
  */
 public class SortedArray {
   public static int[] unique(int[] array) {
-    int[] result = new int[array.length];
-    System.arraycopy(array, 0, result, 0, array.length);
+    int n = array.length;
+    int[] result = new int[n];
+    System.arraycopy(array, 0, result, 0, n);
     return result;
   }
 }
