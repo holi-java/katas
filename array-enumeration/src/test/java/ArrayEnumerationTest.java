@@ -23,4 +23,11 @@ public class ArrayEnumerationTest {
 
     assertFalse("no elements", it.hasMoreElements());
   }
+
+  @Test public void testsEnumerationContainsMoreElementsHasNoSideEffects() throws Exception {
+    ArrayEnumeration<Integer> it = new ArrayEnumeration<>(1);
+
+    assertTrue("has elements", it.hasMoreElements());
+    assertTrue("has elements",it.hasMoreElements());
+  }
 }
