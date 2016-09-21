@@ -39,4 +39,8 @@ public class UniqueSortedArrayTest {
   @Test public void duplicationAtFirst() throws Exception {
     assertThat(SortedArray.unique(new int[] {1, 1, 2}), equalTo(new int[] {1, 2}));
   }
+
+  @Test public void duplicationAtMiddle() throws Exception {
+    assertThat(SortedArray.unique(new int[] {1, 2, 2, 3}), equalTo(new int[] {1, 2, 3}));
+  }
 }
