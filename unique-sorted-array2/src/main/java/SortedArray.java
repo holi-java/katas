@@ -4,10 +4,8 @@
 public class SortedArray {
   public static int[] unique(int[] array) {
     int[] result = new int[array.length];
-    int i = 0;
-    while (array.length > i) {
+    for (int i=0;array.length > i;i++) {
       result[i] = array[i];
-      i++;
     }
     return result;
   }
