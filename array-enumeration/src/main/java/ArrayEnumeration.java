@@ -5,7 +5,6 @@ import java.util.NoSuchElementException;
  * Created by selonj on 16-9-22.
  */
 public class ArrayEnumeration<E> implements Enumeration<E> {
-  private E element;
   private E[] elements;
   private int i;
 
@@ -23,7 +22,6 @@ public class ArrayEnumeration<E> implements Enumeration<E> {
 
   @Override public E nextElement() {
     if (!hasMoreElements()) throw new NoSuchElementException();
-    element = null;
     return elements[i++];
   }
 }
