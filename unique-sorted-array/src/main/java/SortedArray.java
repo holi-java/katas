@@ -11,11 +11,6 @@ public class SortedArray {
       result[i] = array[i];
       i++;
     }
-    if (array.length > i) {
-      result[i] = array[i];
-      i++;
-    }
-
     return result;
   }
 }
