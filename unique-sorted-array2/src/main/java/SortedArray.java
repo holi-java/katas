@@ -6,9 +6,9 @@ public class SortedArray {
     int[] result = new int[array.length];
     int n = 0;
     long prev = Long.MAX_VALUE;
-    for (int i = 0; i < array.length; i++) {
-      if (prev != array[i]) {
-        prev = result[n++] = array[i];
+    for (int current : array) {
+      if (prev != current) {
+        prev = result[n++] = current;
       }
     }
     return copy(result, n);
