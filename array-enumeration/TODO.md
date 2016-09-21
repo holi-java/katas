@@ -1,7 +1,7 @@
 # Array Enumeration TODOs
 
 
-- [ ] has no elements in an empty array enumeration
+- [x] has no elements in an empty array enumeration
 - [ ] singleton
 - [ ] successive element one at a time
 - [ ] raising NoSuchElementException if has no more successive elements
