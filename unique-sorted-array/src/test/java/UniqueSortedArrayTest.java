@@ -19,4 +19,8 @@ public class UniqueSortedArrayTest {
   @Test public void singleton() throws Exception {
     assertThat(SortedArray.unique(new int[] {1}), equalTo(new int[] {1}));
   }
+
+  @Test public void different() throws Exception {
+    assertThat(SortedArray.unique(new int[] {1, 2}), equalTo(new int[] {1, 2}));
+  }
 }
