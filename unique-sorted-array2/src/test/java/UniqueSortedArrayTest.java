@@ -10,4 +10,8 @@ public class UniqueSortedArrayTest {
   @Test public void empty() throws Exception {
     assertThat(SortedArray.unique(new int[0]), equalTo(new int[0]));
   }
+
+  @Test public void uninitializedSingleton() throws Exception {
+    assertThat(SortedArray.unique(new int[1]), equalTo(new int[1]));
+  }
 }
