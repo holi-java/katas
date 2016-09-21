@@ -8,13 +8,13 @@ public class SortedArray {
   public static int[] unique(int[] array) {
     int[] result = new int[array.length];
     int n = 0;
-
+    int prev = 0;
     for (int i = 0; i < array.length; i++) {
       if (i == 0) {
-        result[n++] = array[i];
+        prev = result[n++] = array[i];
       } else {
-        if (array[i - 1] != array[i]) {
-          result[n++] = array[i];
+        if (prev != array[i]) {
+          prev = result[n++] = array[i];
         }
       }
     }
