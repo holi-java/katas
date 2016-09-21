@@ -1,6 +1,6 @@
 # Unique Sorted Array TODOs
 
-- [ ] unique([]) = []
+- [x] unique([]) = []
 - [ ] unique([0]) = [0]
 - [ ] unique([1]) = [1]
 - [ ] unique([1,1]) = [1]
