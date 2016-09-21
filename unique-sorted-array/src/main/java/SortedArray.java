@@ -4,6 +4,6 @@
 public class SortedArray {
 
   public static int[] unique(int[] array) {
-    return new int[0];
+    return new int[array.length];
   }
 }
