@@ -10,7 +10,7 @@ public class SortedArray {
     int n = 0;
     int prev = 0;
     for (int i = 0; i < array.length; i++) {
-      if (i == 0) {
+      if (n == 0) {
         prev = result[n++] = array[i];
       } else {
         if (prev != array[i]) {
