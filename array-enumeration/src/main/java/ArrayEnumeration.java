@@ -13,6 +13,9 @@ public class ArrayEnumeration<E> implements Enumeration<E> {
     this.element = element;
   }
 
+  public ArrayEnumeration(E... elements) {
+  }
+
   @Override public boolean hasMoreElements() {
     return element != null;
   }

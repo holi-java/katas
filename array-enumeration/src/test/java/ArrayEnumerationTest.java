@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -28,6 +29,13 @@ public class ArrayEnumerationTest {
     ArrayEnumeration<Integer> it = new ArrayEnumeration<>(1);
 
     assertTrue("has elements", it.hasMoreElements());
-    assertTrue("has elements",it.hasMoreElements());
+    assertTrue("has elements", it.hasMoreElements());
+  }
+
+  @Test @Ignore public void successiveElementsOneAtATime() throws Exception {
+    ArrayEnumeration<Integer> it = new ArrayEnumeration<>(1, 2);
+
+    assertThat(it.nextElement(), equalTo(1));
+    assertThat(it.nextElement(), equalTo(2));
   }
 }
