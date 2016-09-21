@@ -4,11 +4,13 @@
 public class SortedArray {
   public static int[] unique(int[] array) {
     int[] result = new int[array.length];
-    if (array.length > 0) {
-      result[0] = array[0];
+    int i = 0;
+    if (array.length > i) {
+      result[i] = array[i];
     }
-    if (array.length > 1) {
-      result[1] = array[1];
+    int j = 1;
+    if (array.length > j) {
+      result[j] = array[j];
     }
     return result;
   }
