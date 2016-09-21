@@ -7,6 +7,9 @@ public class SortedArray {
     if (array.length > 0) {
       result[0] = array[0];
     }
+    if (array.length > 1) {
+      result[1] = array[1];
+    }
     return result;
   }
 }
