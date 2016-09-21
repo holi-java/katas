@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -22,5 +23,9 @@ public class UniqueSortedArrayTest {
 
   @Test public void different() throws Exception {
     assertThat(SortedArray.unique(new int[] {1, 2}), equalTo(new int[] {1, 2}));
+  }
+
+  @Ignore @Test public void same() throws Exception {
+    assertThat(SortedArray.unique(new int[] {1, 1}), equalTo(new int[] {1}));
   }
 }
