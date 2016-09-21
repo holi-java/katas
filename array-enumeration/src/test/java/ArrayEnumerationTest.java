@@ -51,4 +51,10 @@ public class ArrayEnumerationTest {
       assertTrue(true);
     }
   }
+
+  @Test public void hasNoMoreElementsWithNullArray() throws Exception {
+    ArrayEnumeration<?> it = new ArrayEnumeration<>(null);
+
+    assertFalse("no elements", it.hasMoreElements());
+  }
 }

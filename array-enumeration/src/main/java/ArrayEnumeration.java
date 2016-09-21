@@ -9,7 +9,11 @@ public class ArrayEnumeration<E> implements Enumeration<E> {
   private int i;
 
   public ArrayEnumeration(E... elements) {
-    this.elements = elements;
+    this.elements = elements == null ? empty() : elements;
+  }
+
+  private E[] empty() {
+    return (E[]) new Object[0];
   }
 
   @Override public boolean hasMoreElements() {
