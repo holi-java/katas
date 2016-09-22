@@ -17,7 +17,7 @@ public class BerlinClock {
 
   public String display() {
     return secondsLight() + "\n" +
-        /**/light(hours >= 1 * 5) + light(hours >= 2 * 5) + light(hours >= 3 * 5) + light(hours >= 4 * 5) + "\n" +
+        /**/light(hours / 5 >= 1) + light(hours / 5 >= 2) + light(hours / 5 >= 3) + light(hours / 5 >= 4) + "\n" +
         /**/light(hours % 5 > 0) + "000\n" +
         /**/"00000000000\n" +
         /**/"0000";
