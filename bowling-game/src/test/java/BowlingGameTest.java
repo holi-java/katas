@@ -24,8 +24,7 @@ public class BowlingGameTest {
   }
 
   @Test public void rollsAllPinsInAFrame() throws Exception {
-    game.roll(3);
-    game.roll(7);
+    rollASpare();
     rolls(1, 18);
 
     assertThat(game.score(), equalTo(29));
@@ -33,11 +32,15 @@ public class BowlingGameTest {
 
   @Test public void rollsAllPinsAtLastFrame() throws Exception {
     rolls(1, 18);
-    game.roll(3);
-    game.roll(7);
+    rollASpare();
     game.roll(6);
 
     assertThat(game.score(), equalTo(34));
+  }
+
+  private void rollASpare() {
+    game.roll(3);
+    game.roll(7);
   }
 
   private void rolls(int pins) {
