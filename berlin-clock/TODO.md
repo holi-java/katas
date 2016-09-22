@@ -1,6 +1,6 @@
 # Berlin Clock TODOs
 
-- [ ] lit for even-numbered seconds.
+- [x] lit for even-numbered seconds.
 - [x] unlit for odd-numbered seconds.
 - [ ] displays hours 5.
 - [ ] displays hours 6.

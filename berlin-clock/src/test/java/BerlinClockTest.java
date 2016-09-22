@@ -19,4 +19,16 @@ public class BerlinClockTest {
     /**/"0000"
     ));
   }
+
+  @Test public void litLightForEvenNumberedSeconds() throws Exception {
+    BerlinClock clock = new BerlinClock(0);
+
+    assertThat(clock.display(), equalTo(
+    /**/"1\n" +
+    /**/"0000\n" +
+    /**/"0000\n" +
+    /**/"00000000000\n" +
+    /**/"0000"
+    ));
+  }
 }
