@@ -38,6 +38,13 @@ public class BowlingGameTest {
     assertThat(game.score(), equalTo(34));
   }
 
+  @Ignore @Test public void rollsAllPinsDownOnTheFirstShotInAFrame() throws Exception {
+    game.roll(10);
+    rolls(1, 18);
+
+    assertThat(game.score(), equalTo(30));
+  }
+
   private void rollASpare() {
     game.roll(3);
     game.roll(7);
