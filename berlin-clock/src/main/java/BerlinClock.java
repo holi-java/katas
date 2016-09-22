@@ -28,8 +28,9 @@ public class BerlinClock {
   }
 
   private String lights(String color, int count, int lit) {
+    String[] colors = new String[] {"Y", "Y", "R", "Y", "Y", "R", "Y", "Y", "R", "Y", "Y"};
     String lights = "";
-    for (int i = 1; i <= count; i++) lights += light(color, lit >= i);
+    for (int i = 1; i <= count; i++) lights += light(count == 11 ? colors[i - 1] : color, lit >= i);
     return lights;
   }
 
