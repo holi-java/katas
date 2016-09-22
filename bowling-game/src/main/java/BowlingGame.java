@@ -13,8 +13,8 @@ public class BowlingGame {
 
   public int score() {
     int score = 0;
-    for (int i = 0; i < rolls.length / 2; i++) {
-      score += score(i);
+    for (int frame = 0; frame < rolls.length / 2; frame++) {
+      score += score(frame);
     }
     return score;
   }
