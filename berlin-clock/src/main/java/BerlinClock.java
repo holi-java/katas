@@ -6,8 +6,7 @@ public class BerlinClock {
   private int seconds;
 
   public BerlinClock(int seconds) {
-    this.hours = 0;
-    this.seconds = seconds;
+    this(0, seconds);
   }
 
   public BerlinClock(int hours, int seconds) {
