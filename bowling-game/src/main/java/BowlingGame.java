@@ -52,11 +52,11 @@ public class BowlingGame {
   private int bonus(int frame) {
     if (strike(frame)) {
       return pins(frame + 1);
-    } else if (spare(frame)) {
-      return first(frame + 1);
-    } else {
-      return 0;
     }
+    if (spare(frame)) {
+      return first(frame + 1);
+    }
+    return 0;
   }
 
   private boolean strike(int frame) {

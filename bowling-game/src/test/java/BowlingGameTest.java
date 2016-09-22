@@ -27,33 +27,37 @@ public class BowlingGameTest {
 
   @Test public void rollsAllPinsDownInAFrame() throws Exception {
     rollASpare();
-    rolls(1, 18);
+    game.roll(3);
+    game.roll(1);
+    rolls(0, 16);
 
-    assertThat(game.score(), equalTo(29));
+    assertThat(game.score(), equalTo(10 + 2 * 3 + 1));
   }
 
   @Test public void rollsAllPinsDownAtLastFrame() throws Exception {
-    rolls(1, 18);
+    rolls(0, 18);
     rollASpare();
     game.roll(6);
 
-    assertThat(game.score(), equalTo(34));
+    assertThat(game.score(), equalTo(10 + 6));
   }
 
   @Test public void rollsAllPinsDownOnTheFirstShotInAFrame() throws Exception {
-    game.roll(10);
-    rolls(1, 18);
+    rollAStrike();
+    game.roll(3);
+    game.roll(4);
+    rolls(0, 16);
 
-    assertThat(game.score(), equalTo(30));
+    assertThat(game.score(), equalTo(10 + 2 * (3 + 4)));
   }
 
   @Test public void rollsAllPinsDownOnTheFirstShotAtLastFrame() throws Exception {
-    rolls(1, 18);
+    rolls(0, 18);
     rollAStrike();
     game.roll(3);
     game.roll(4);
 
-    assertThat(game.score(), equalTo(35));
+    assertThat(game.score(), equalTo(10 + 3 + 4));
   }
 
   @Test public void raisingIllegalArgumentExceptionIfRollPinsGreaterThanMaxPinsOnOneShotInAFrame() throws Exception {
