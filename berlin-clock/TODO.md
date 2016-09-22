@@ -4,7 +4,7 @@
 - [x] unlit for odd-numbered seconds.
 - [x] displays hours 5.
 - [x] displays hours 20.
-- [ ] displays hours 6.
+- [x] displays hours 6.
 - [x] displays hours 1.
 - [ ] displays hours 4.
 - [ ] ?displays hours 24 & 0.
