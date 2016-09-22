@@ -7,4 +7,4 @@
 - [x] knocked all pins down in a frame, this is spare, and the next rolls are reward scores.
 - [x] knocked all pins down on the first time in the last frame, and the next two rolls are reward.
 - [x] knocked all pins down in the last frame, and the next rolls are reward scores.
-- [ ] checking rolls all pins in a frame <= 10   
+- [x] checking rolls all pins in a frame <= 10   

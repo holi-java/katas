@@ -65,6 +65,16 @@ public class BowlingGameTest {
     }
   }
 
+  @Test public void raisingIllegalArgumentExceptionIfRollPinsGreaterThanMaxPinsInAFrame() throws Exception {
+    game.roll(3);
+    try {
+      game.roll(7 + 1);
+      fail("pins out of max pins in a frame");
+    } catch (IllegalArgumentException expected) {
+      assertTrue(true);
+    }
+  }
+
   private void rollAStrike() {
     game.roll(10);
   }

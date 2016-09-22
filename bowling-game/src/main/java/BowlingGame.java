@@ -9,15 +9,16 @@ public class BowlingGame {
   private int i;
 
   public void roll(int pins) {
-    if (pins > MAX_FRAMES) {
-      throw new IllegalArgumentException("pins out of bounds in a frame: " + pins);
-    }
     rolls[i] = pins;
     i += step();
   }
 
   private int step() {
-    return strike(frame(i)) ? 2 : 1;
+    int frame = frame(i);
+    if (pins(frame) > MAX_FRAMES) {
+      throw new IllegalArgumentException(String.format("Pins out of bounds in frame %d: %d", frame, pins(frame)));
+    }
+    return strike(frame) ? 2 : 1;
   }
 
   private int frame(int shots) {
