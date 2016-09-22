@@ -13,8 +13,8 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"0000\n" +
-    /**/"0000\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
     /**/"00000000000\n" +
     /**/"0000"
     ));
@@ -25,8 +25,8 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"Y\n" +
-    /**/"0000\n" +
-    /**/"0000\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
     /**/"00000000000\n" +
     /**/"0000"
     ));
@@ -97,8 +97,8 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"0000\n" +
-    /**/"0000\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
     /**/"00000000000\n" +
     /**/"Y000"
     ));
@@ -109,8 +109,8 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"0000\n" +
-    /**/"0000\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
     /**/"00000000000\n" +
     /**/"YYYY"
     ));
@@ -121,8 +121,8 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"0000\n" +
-    /**/"0000\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
     /**/"Y0000000000\n" +
     /**/"0000"
     ));
@@ -133,8 +133,8 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"0000\n" +
-    /**/"0000\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
     /**/"YYR00000000\n" +
     /**/"0000"
     ));
@@ -145,8 +145,8 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"0000\n" +
-    /**/"0000\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
     /**/"YYRYYRYYRYY\n" +
     /**/"0000"
     ));
@@ -154,6 +154,18 @@ public class BerlinClockTest {
 
   @Test public void hours24() throws Exception {
     BerlinClock clock = new BerlinClock(24, 0, 1);
+
+    assertThat(clock.display(), equalTo(
+    /**/"0\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
+    /**/"00000000000\n" +
+    /**/"0000"
+    ));
+  }
+
+  @Test public void hours0() throws Exception {
+    BerlinClock clock = new BerlinClock(0, 0, 1);
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +

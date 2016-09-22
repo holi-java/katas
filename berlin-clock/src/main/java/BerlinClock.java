@@ -10,12 +10,14 @@ public class BerlinClock {
   private static final Color[] HOURS_LIGHTS = {RED, RED, RED, RED};
   private static final Color[] TOP_MINUTES_LIGHTS = {YELLOW, YELLOW, RED, YELLOW, YELLOW, RED, YELLOW, YELLOW, RED, YELLOW, YELLOW};
   private static final Color[] BOTTOM_MINUTES_LIGHTS = {YELLOW, YELLOW, YELLOW, YELLOW};
+
+  private static final int HOURS_IN_DAY = 24;
   private final int hours;
   private final int minutes;
   private int seconds;
 
   public BerlinClock(int hours, int minutes, int seconds) {
-    this.hours = hours;
+    this.hours = hours == 0 ? HOURS_IN_DAY : hours;
     this.minutes = minutes;
     this.seconds = seconds;
   }
