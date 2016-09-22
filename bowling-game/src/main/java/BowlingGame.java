@@ -34,23 +34,7 @@ public class BowlingGame {
   }
 
   private int score(int frame) {
-    int bonus = 0;
-    if (strike(frame)) {
-      bonus = pins(frame + 1);
-    } else if (spare(frame)) {
-      bonus = first(frame + 1);
-    } else {
-      bonus = 0;
-    }
-    return pins(frame) + bonus;
-  }
-
-  private boolean strike(int frame) {
-    return first(frame) == ALL_FRAME_PINS;
-  }
-
-  private boolean spare(int frame) {
-    return pins(frame) == ALL_FRAME_PINS;
+    return pins(frame) + bonus(frame);
   }
 
   private int pins(int frame) {
@@ -63,5 +47,23 @@ public class BowlingGame {
 
   private int last(int frame) {
     return rolls[(frame << 1) + 1];
+  }
+
+  private int bonus(int frame) {
+    if (strike(frame)) {
+      return pins(frame + 1);
+    } else if (spare(frame)) {
+      return first(frame + 1);
+    } else {
+      return 0;
+    }
+  }
+
+  private boolean strike(int frame) {
+    return first(frame) == ALL_FRAME_PINS;
+  }
+
+  private boolean spare(int frame) {
+    return pins(frame) == ALL_FRAME_PINS;
   }
 }
