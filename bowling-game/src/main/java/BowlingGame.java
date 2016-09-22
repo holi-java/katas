@@ -4,7 +4,7 @@
 public class BowlingGame {
   private static final int MAX_FRAMES = 10;
   private static final int ALL_FRAME_PINS = 10;
-  private static final int MAX_ROLLS = (MAX_FRAMES + 1) << 2;
+  private static final int MAX_ROLLS = (MAX_FRAMES + 2) << 1;
   private int[] rolls = new int[MAX_ROLLS];
   private int i;
 
@@ -51,6 +51,9 @@ public class BowlingGame {
 
   private int bonus(int frame) {
     if (strike(frame)) {
+      if (strike(frame + 1)) {
+        return pins(frame + 1) + pins(frame + 2);
+      }
       return pins(frame + 1);
     }
     if (spare(frame)) {

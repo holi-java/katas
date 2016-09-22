@@ -9,4 +9,4 @@
 - [x] knocked all pins down in the last frame, and the next rolls are reward scores.
 - [x] checking rolls all pins in a frame <= 10   
 - [x] skip rolls out of the max rolls
-- [ ] knocked all pins down on the first time in each frame
+- [x] knocked all pins down on the first time in each frame
