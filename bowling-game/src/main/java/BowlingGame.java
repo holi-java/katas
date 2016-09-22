@@ -25,13 +25,21 @@ public class BowlingGame {
       return true;
     }
     int last = frame(i - MAX_FRAME_ROLLS);
-    if (strike(last)) {
+    if (isStrike(last)) {
       return false;
     }
-    if (spare(last)) {
+    if (isSpare(last)) {
       return i >= MAX_ROLLS + 1;
     }
     return true;
+  }
+
+  private boolean isStrike(int frame) {
+    return first(frame) == ALL_FRAME_PINS;
+  }
+
+  private boolean isSpare(int frame) {
+    return pins(frame) == ALL_FRAME_PINS;
   }
 
   private int step() {
@@ -39,7 +47,7 @@ public class BowlingGame {
     if (pins(frame) > ALL_FRAME_PINS) {
       throw new IllegalArgumentException(String.format("Pins out of bounds in frame %d: %d", frame, pins(frame)));
     }
-    return strike(frame) ? 2 : 1;
+    return isStrike(frame) ? 2 : 1;
   }
 
   private int frame(int shots) {
@@ -71,23 +79,15 @@ public class BowlingGame {
   }
 
   private int bonus(int frame) {
-    if (strike(frame)) {
-      if (strike(frame + 1)) {
+    if (isStrike(frame)) {
+      if (isStrike(frame + 1)) {
         return pins(frame + 1) + pins(frame + 2);
       }
       return pins(frame + 1);
     }
-    if (spare(frame)) {
+    if (isSpare(frame)) {
       return first(frame + 1);
     }
     return 0;
-  }
-
-  private boolean strike(int frame) {
-    return first(frame) == ALL_FRAME_PINS;
-  }
-
-  private boolean spare(int frame) {
-    return pins(frame) == ALL_FRAME_PINS;
   }
 }

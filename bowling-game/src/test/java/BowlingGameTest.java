@@ -13,13 +13,13 @@ public class BowlingGameTest {
   private final BowlingGame game = new BowlingGame();
 
   @Test public void noPinsRollsDown() throws Exception {
-    rolls(0, 20);
+    rollMany(20, 0);
 
     assertThat(game.score(), equalTo(0));
   }
 
   @Test public void rollsOnePinDownAtATime() throws Exception {
-    rolls(1, 20);
+    rollMany(20, 1);
 
     assertThat(game.score(), equalTo(20));
   }
@@ -28,13 +28,13 @@ public class BowlingGameTest {
     rollASpare();
     game.roll(3);
     game.roll(1);
-    rolls(0, 16);
+    rollMany(16, 0);
 
     assertThat(game.score(), equalTo(10 + 2 * 3 + 1));
   }
 
   @Test public void rollsAllPinsDownAtLastFrame() throws Exception {
-    rolls(0, 18);
+    rollMany(18, 0);
     rollASpare();
     game.roll(6);
 
@@ -45,13 +45,13 @@ public class BowlingGameTest {
     rollAStrike();
     game.roll(3);
     game.roll(4);
-    rolls(0, 16);
+    rollMany(16, 0);
 
     assertThat(game.score(), equalTo(10 + 2 * (3 + 4)));
   }
 
   @Test public void rollsAllPinsDownOnTheFirstShotAtLastFrame() throws Exception {
-    rolls(0, 18);
+    rollMany(18, 0);
     rollAStrike();
     game.roll(3);
     game.roll(4);
@@ -79,13 +79,13 @@ public class BowlingGameTest {
   }
 
   @Test public void rollsAllPinsDownOnTheFirstShotInEachFrame() throws Exception {
-    rolls(10, 12);
+    rollMany(12, 10);
 
     assertThat(game.score(), equalTo(300));
   }
 
   @Test public void throwsGameOverExceptionIfOutOfMaxRolls() throws Exception {
-    rolls(0, 20);
+    rollMany(20, 0);
     try {
       game.roll(3);
       fail("game over");
@@ -95,7 +95,7 @@ public class BowlingGameTest {
   }
 
   @Test public void throwsGameOverExceptionIfRollMoreThanOnceAtLastSpareFrame() throws Exception {
-    rolls(0, 18);
+    rollMany(18, 0);
     rollASpare();
     game.roll(3);
 
@@ -108,7 +108,7 @@ public class BowlingGameTest {
   }
 
   @Test public void throwsGameOverExceptionIfRollMoreThanTwiceAtLastStrikeFrame() throws Exception {
-    rolls(0, 18);
+    rollMany(18, 0);
     rollAStrike();
     rollASpare();
 
@@ -129,7 +129,7 @@ public class BowlingGameTest {
     game.roll(7);
   }
 
-  private void rolls(int pins, int shots) {
+  private void rollMany(int shots, int pins) {
     for (int i = 0; i < shots; i++) {
       game.roll(pins);
     }
