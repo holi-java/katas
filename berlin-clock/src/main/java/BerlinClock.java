@@ -12,13 +12,14 @@ public class BerlinClock {
   private static final Color[] BOTTOM_MINUTES_LIGHTS = {YELLOW, YELLOW, YELLOW, YELLOW};
 
   private static final int HOURS_IN_DAY = 24;
+  private static final int MINUTES_IN_HOUR = 60;
   private final int hours;
   private final int minutes;
-  private int seconds;
+  private final int seconds;
 
   public BerlinClock(int hours, int minutes, int seconds) {
-    this.hours = Rounding.between(1, HOURS_IN_DAY).round(hours);
-    this.minutes = minutes;
+    this.hours = Rounding.between(1, HOURS_IN_DAY).round(hours + (minutes / MINUTES_IN_HOUR));
+    this.minutes = Rounding.between(0, MINUTES_IN_HOUR - 1).round(minutes);
     this.seconds = seconds;
   }
 

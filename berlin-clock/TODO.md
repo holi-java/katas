@@ -14,5 +14,5 @@
 - [x] displays minutes 4.
 - [x] checking all fields color when all lights on in each row. 
 - [x] rounding hours?
-- [ ] rounding minutes?
+- [x] rounding minutes?
 - [ ] rounding seconds?
