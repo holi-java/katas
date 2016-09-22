@@ -24,7 +24,7 @@ public class BerlinClock {
         /**/lights(RED, 4, hours / 5) + "\n" +
         /**/lights(RED, 4, hours % 5) + "\n" +
         /**/lights("1", 11, minutes / 5) + "\n" +
-        /**/lights("1", 4, minutes % 5);
+        /**/lights(YELLOW, 4, minutes % 5);
   }
 
   private String lights(String color, int count, int lit) {
