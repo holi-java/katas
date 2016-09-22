@@ -31,10 +31,23 @@ public class BerlinClock {
   }
 
   private String lights(String[] colors, int litLights) {
+    return lights(colors(colors), litLights);
+  }
+
+  private String lights(Color[] colors, int litLights) {
     String lights = "";
     int nth = 1;
-    for (String color : colors) lights += light(color(color), nth++ <= litLights);
+    for (Color color : colors) lights += light(color, nth++ <= litLights);
     return lights;
+  }
+
+  private Color[] colors(String[] colors) {
+    Color[] result = new Color[colors.length];
+    int i=0;
+    for (String color : colors) {
+      result[i++] = color(color);
+    }
+    return result;
   }
 
   private String light(Color color, boolean lit) {
