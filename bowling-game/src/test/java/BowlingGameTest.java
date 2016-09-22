@@ -49,8 +49,9 @@ public class BowlingGameTest {
     rolls(1, 18);
     rollAStrike();
     game.roll(3);
+    game.roll(4);
 
-    assertThat(game.score(), equalTo(31));
+    assertThat(game.score(), equalTo(35));
   }
 
   private void rollAStrike() {
