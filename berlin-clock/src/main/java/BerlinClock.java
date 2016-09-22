@@ -38,7 +38,7 @@ public class BerlinClock {
   }
 
   private String light(String color, boolean lit) {
-    return color(lit ? color : OFF).code;
+    return (lit ? color(color) : color(OFF)).code;
   }
 
   private Color color(String code) {
