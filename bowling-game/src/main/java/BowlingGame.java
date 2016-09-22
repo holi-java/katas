@@ -3,14 +3,35 @@
  */
 public class BowlingGame {
   private static final int MAX_FRAMES = 10;
+  private static final int MAX_FRAME_ROLLS = 2;
+  private static final int MAX_ROLLS = MAX_FRAMES * MAX_FRAME_ROLLS;
   private static final int ALL_FRAME_PINS = 10;
-  private static final int MAX_ROLLS = (MAX_FRAMES + 2) << 1;
-  private int[] rolls = new int[MAX_ROLLS];
+  private int[] rolls = new int[MAX_ROLLS + 2 * MAX_FRAME_ROLLS];
   private int i;
 
   public void roll(int pins) {
+    if (isGameOver()) {
+      throw new GameOverException();
+    }
     rolls[i] = pins;
     i += step();
+  }
+
+  private boolean isGameOver() {
+    if (i < MAX_ROLLS) {
+      return false;
+    }
+    if (i >= rolls.length) {
+      return true;
+    }
+    int last = frame(i - MAX_FRAME_ROLLS);
+    if (strike(last)) {
+      return false;
+    }
+    if (spare(last)) {
+      return i >= MAX_ROLLS + 1;
+    }
+    return true;
   }
 
   private int step() {

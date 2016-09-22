@@ -78,18 +78,46 @@ public class BowlingGameTest {
     }
   }
 
-  @Test public void skipRollsOutOfTheMaxRolls() throws Exception {
-    rolls(0, 20);
-    game.roll(3);
-    game.roll(4);
-
-    assertThat(game.score(), equalTo(0));
-  }
-
   @Test public void rollsAllPinsDownOnTheFirstShotInEachFrame() throws Exception {
     rolls(10, 12);
 
     assertThat(game.score(), equalTo(300));
+  }
+
+  @Test public void throwsGameOverExceptionIfOutOfMaxRolls() throws Exception {
+    rolls(0, 20);
+    try {
+      game.roll(3);
+      fail("game over");
+    } catch (GameOverException expected) {
+      assertTrue(true);
+    }
+  }
+
+  @Test public void throwsGameOverExceptionIfRollMoreThanOnceAtLastSpareFrame() throws Exception {
+    rolls(0, 18);
+    rollASpare();
+    game.roll(3);
+
+    try {
+      game.roll(4);
+      fail("game over");
+    } catch (GameOverException expected) {
+      assertTrue(true);
+    }
+  }
+
+  @Test public void throwsGameOverExceptionIfRollMoreThanTwiceAtLastStrikeFrame() throws Exception {
+    rolls(0, 18);
+    rollAStrike();
+    rollASpare();
+
+    try {
+      game.roll(4);
+      fail("game over");
+    } catch (GameOverException expected) {
+      assertTrue(true);
+    }
   }
 
   private void rollAStrike() {
