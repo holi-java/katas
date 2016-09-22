@@ -1,10 +1,10 @@
 # Bowling Game TODOs
 
 
-- [x] no ball rolls down at a time 
-- [x] 1 ball rolls down at a time 
-- [ ] rolls all balls down at the first time in a round,next two rolls are reward scores.
-- [ ] rolls all balls in a round,next rolls are reward scores.
-- [ ] rolls all balls down at the first time in the last round,next two rolls are reward.
-- [ ] rolls all balls down in the last round,next rolls are reward scores.
-- [ ] checking rolls all balls in a round <= 10   
+- [x] no pins knocked down in each rolls.
+- [x] 1 pin knocked down in each rolls. 
+- [ ] all the pins are knocked down on the first roll in a frame, this is a strike, and the next two rolls are reward scores.
+- [ ] knocked all pins down in a frame, this is spare, and the next rolls are reward scores.
+- [ ] knocked all pins down on the first time in the last frame, and the next two rolls are reward.
+- [ ] knocked all pins down in the last frame, and the next rolls are reward scores.
+- [ ] checking rolls all pins in a frame <= 10   
