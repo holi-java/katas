@@ -24,13 +24,13 @@ public class BerlinClock {
 
   public String display() {
     return light(YELLOW, seconds % 2 == 0) + "\n" +
-        /**/lights(HOURS_LIGHTS, RED, 4, hours / 5) + "\n" +
-        /**/lights(HOURS_LIGHTS, RED, 4, hours % 5) + "\n" +
-        /**/lights(TOP_MINUTES_LIGHTS, "1", 11, minutes / 5) + "\n" +
-        /**/lights(BOTTOM_MINUTES_LIGHTS, YELLOW, 4, minutes % 5);
+        /**/lights(HOURS_LIGHTS, 4, hours / 5) + "\n" +
+        /**/lights(HOURS_LIGHTS, 4, hours % 5) + "\n" +
+        /**/lights(TOP_MINUTES_LIGHTS, 11, minutes / 5) + "\n" +
+        /**/lights(BOTTOM_MINUTES_LIGHTS, 4, minutes % 5);
   }
 
-  private String lights(String[] colors, String color, int count, int lit) {
+  private String lights(String[] colors, int count, int lit) {
     String lights = "";
     for (int i = 1; i <= count; i++) lights += light(colors[i-1], lit >= i);
     return lights;
