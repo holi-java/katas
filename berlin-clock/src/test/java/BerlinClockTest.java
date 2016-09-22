@@ -31,4 +31,16 @@ public class BerlinClockTest {
     /**/"0000"
     ));
   }
+
+  @Test public void hours5() throws Exception {
+    BerlinClock clock = new BerlinClock(5, 1);
+
+    assertThat(clock.display(), equalTo(
+    /**/"0\n" +
+    /**/"1000\n" +
+    /**/"0000\n" +
+    /**/"00000000000\n" +
+    /**/"0000"
+    ));
+  }
 }

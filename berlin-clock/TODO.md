@@ -2,7 +2,7 @@
 
 - [x] lit for even-numbered seconds.
 - [x] unlit for odd-numbered seconds.
-- [ ] displays hours 5.
+- [x] displays hours 5.
 - [ ] displays hours 6.
 - [ ] displays hours 1.
 - [ ] displays hours 4.
