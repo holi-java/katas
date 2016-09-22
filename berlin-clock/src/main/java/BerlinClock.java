@@ -14,10 +14,6 @@ public class BerlinClock {
   private final int minutes;
   private int seconds;
 
-  public BerlinClock(int seconds) {
-    this(0, 0, seconds);
-  }
-
   public BerlinClock(int hours, int minutes, int seconds) {
     this.hours = hours;
     this.minutes = minutes;

@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class BerlinClockTest {
 
   @Test public void unlitLightForOddNumberedSeconds() throws Exception {
-    BerlinClock clock = new BerlinClock(1);
+    BerlinClock clock = new BerlinClock(0, 0, 1);
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
@@ -21,7 +21,7 @@ public class BerlinClockTest {
   }
 
   @Test public void litLightForEvenNumberedSeconds() throws Exception {
-    BerlinClock clock = new BerlinClock(0);
+    BerlinClock clock = new BerlinClock(0, 0, 0);
 
     assertThat(clock.display(), equalTo(
     /**/"Y\n" +
