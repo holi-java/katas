@@ -23,14 +23,14 @@ public class BowlingGameTest {
     assertThat(game.score(), equalTo(20));
   }
 
-  @Test public void rollsAllPinsInAFrame() throws Exception {
+  @Test public void rollsAllPinsDownInAFrame() throws Exception {
     rollASpare();
     rolls(1, 18);
 
     assertThat(game.score(), equalTo(29));
   }
 
-  @Test public void rollsAllPinsAtLastFrame() throws Exception {
+  @Test public void rollsAllPinsDownAtLastFrame() throws Exception {
     rolls(1, 18);
     rollASpare();
     game.roll(6);
