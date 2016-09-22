@@ -49,14 +49,4 @@ public class BerlinClock {
       default: throw new IllegalArgumentException(code);
     }
   }
-
-  private enum Color {
-    YELLOW("Y"), RED("R"), OFF("0");
-
-    private String code;
-
-    Color(String code) {
-      this.code = code;
-    }
-  }
 }
