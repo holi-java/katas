@@ -6,7 +6,7 @@
 - [x] displays hours 20.
 - [x] displays hours 6.
 - [x] displays hours 1.
-- [ ] displays hours 4.
+- [x] displays hours 4.
 - [ ] ?displays hours 24 & 0.
 - [ ] displays minutes 5.
 - [ ] displays minutes 15.
