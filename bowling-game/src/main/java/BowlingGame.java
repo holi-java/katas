@@ -3,6 +3,7 @@
  */
 public class BowlingGame {
   private static final int MAX_ROLLS = 20;
+  private static final int ALL_FRAME_PINS = 10;
   private int[] rolls = new int[MAX_ROLLS];
   private int i;
 
@@ -19,11 +20,18 @@ public class BowlingGame {
   }
 
   private int score(int frame) {
-    int first = frame << 1;
-    int score = rolls[first] + rolls[first + 1];
-    if (score == 10) {
-      score += 1;
+    if (spare(frame)) {
+      return pins(frame) + 1;
     }
-    return score;
+    return pins(frame);
+  }
+
+  private boolean spare(int frame) {
+    return pins(frame) == ALL_FRAME_PINS;
+  }
+
+  private int pins(int frame) {
+    int first = frame << 1;
+    return rolls[first] + rolls[first + 1];
   }
 }
