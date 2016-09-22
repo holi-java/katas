@@ -24,7 +24,7 @@ public class BerlinClockTest {
     BerlinClock clock = new BerlinClock(0);
 
     assertThat(clock.display(), equalTo(
-    /**/"1\n" +
+    /**/"Y\n" +
     /**/"0000\n" +
     /**/"0000\n" +
     /**/"00000000000\n" +
