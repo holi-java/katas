@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -171,6 +172,18 @@ public class BerlinClockTest {
     /**/"0\n" +
     /**/"RRRR\n" +
     /**/"RRRR\n" +
+    /**/"00000000000\n" +
+    /**/"0000"
+    ));
+  }
+
+  @Ignore @Test public void hours25() throws Exception {
+    BerlinClock clock = new BerlinClock(25, 0, 1);
+
+    assertThat(clock.display(), equalTo(
+    /**/"0\n" +
+    /**/"0000\n" +
+    /**/"R000\n" +
     /**/"00000000000\n" +
     /**/"0000"
     ));
