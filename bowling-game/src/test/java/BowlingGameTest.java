@@ -11,18 +11,19 @@ public class BowlingGameTest {
   private final BowlingGame game = new BowlingGame();
 
   @Test public void noBallRollsDown() throws Exception {
-
-    for (int i = 0; i < 20; i++) {
-      game.roll(0);
-    }
+    rollAll(0);
 
     assertThat(game.score(), equalTo(0));
   }
 
-  @Test public void rollsOneDownAtATime() throws Exception {
+  private void rollAll(int balls) {
     for (int i = 0; i < 20; i++) {
-      game.roll(1);
+      game.roll(balls);
     }
+  }
+
+  @Test public void rollsOneDownAtATime() throws Exception {
+    rollAll(1);
 
     assertThat(game.score(), equalTo(20));
   }
