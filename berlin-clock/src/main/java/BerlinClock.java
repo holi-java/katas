@@ -33,7 +33,7 @@ public class BerlinClock {
   private String lights(String[] colors, int lit) {
     String lights = "";
     int nth = 1;
-    for (int i = 0; i < colors.length; i++) lights += light(colors[i], nth++ <= lit);
+    for (String color : colors) lights += light(color, nth++ <= lit);
     return lights;
   }
 
