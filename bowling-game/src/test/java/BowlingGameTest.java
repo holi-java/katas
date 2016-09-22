@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -11,19 +12,31 @@ public class BowlingGameTest {
   private final BowlingGame game = new BowlingGame();
 
   @Test public void noPinsRollsDown() throws Exception {
-    rollAll(0);
+    rolls(0);
 
     assertThat(game.score(), equalTo(0));
   }
 
   @Test public void rollsOnePinDownAtATime() throws Exception {
-    rollAll(1);
+    rolls(1);
 
     assertThat(game.score(), equalTo(20));
   }
 
-  private void rollAll(int pins) {
-    for (int i = 0; i < 20; i++) {
+  @Ignore @Test public void rollsAllPinsInAFrame() throws Exception {
+    game.roll(3);
+    game.roll(7);
+    rolls(1, 18);
+
+    assertThat(game.score(), equalTo(29));
+  }
+
+  private void rolls(int pins) {
+    rolls(pins, 20);
+  }
+
+  private void rolls(int pins, int shots) {
+    for (int i = 0; i < shots; i++) {
       game.roll(pins);
     }
   }
