@@ -9,10 +9,14 @@ public class BerlinClock {
   }
 
   public String display() {
-    return (seconds % 2 == 0 ? "1" : "0") + "\n" +
+    return secondsLight() + "\n" +
         /**/"0000\n" +
         /**/"0000\n" +
         /**/"00000000000\n" +
         /**/"0000";
+  }
+
+  private String secondsLight() {
+    return seconds % 2 == 0 ? "1" : "0";
   }
 }
