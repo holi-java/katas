@@ -2,19 +2,19 @@
  * Created by selonj on 16-9-22.
  */
 public class BowlingGame {
-  private static final int MAX_FRAMES = 20;
-  private int[] frames = new int[MAX_FRAMES];
-  private int frame;
+  private static final int MAX_ROLLS = 20;
+  private int[] rolls = new int[MAX_ROLLS];
+  private int i;
 
   public void roll(int pins) {
-    frames[frame++] = pins;
+    rolls[i++] = pins;
   }
 
   public int score() {
-    int total = 0;
-    for (int pins : frames) {
-      total += pins;
+    int score = 0;
+    for (int pins : rolls) {
+      score += pins;
     }
-    return total;
+    return score;
   }
 }
