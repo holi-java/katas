@@ -23,7 +23,7 @@ public class BerlinClock {
   }
 
   public String display() {
-    return light(YELLOW, seconds % 2 == 0) + "\n" +
+    return light(Color.YELLOW, seconds % 2 == 0) + "\n" +
         /**/lights(HOURS_LIGHTS, hours / 5) + "\n" +
         /**/lights(HOURS_LIGHTS, hours % 5) + "\n" +
         /**/lights(TOP_MINUTES_LIGHTS, minutes / 5) + "\n" +
@@ -33,12 +33,12 @@ public class BerlinClock {
   private String lights(String[] colors, int litLights) {
     String lights = "";
     int nth = 1;
-    for (String color : colors) lights += light(color, nth++ <= litLights);
+    for (String color : colors) lights += light(color(color), nth++ <= litLights);
     return lights;
   }
 
-  private String light(String color, boolean lit) {
-    return (lit ? color(color) : color(OFF)).code;
+  private String light(Color color, boolean lit) {
+    return (lit ? color : color(OFF)).code;
   }
 
   private Color color(String code) {
