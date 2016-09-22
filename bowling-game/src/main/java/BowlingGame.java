@@ -34,13 +34,15 @@ public class BowlingGame {
   }
 
   private int score(int frame) {
+    int bonus = 0;
     if (strike(frame)) {
-      return pins(frame) + pins(frame + 1);
+      bonus = pins(frame + 1);
+    } else if (spare(frame)) {
+      bonus = first(frame + 1);
+    } else {
+      bonus = 0;
     }
-    if (spare(frame)) {
-      return pins(frame) + first(frame + 1);
-    }
-    return pins(frame);
+    return pins(frame) + bonus;
   }
 
   private boolean strike(int frame) {
