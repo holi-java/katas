@@ -13,6 +13,6 @@
 - [x] displays minutes 1.
 - [x] displays minutes 4.
 - [x] checking all fields color when all lights on in each row. 
-- [ ] rounding hours?
+- [x] rounding hours?
 - [ ] rounding minutes?
 - [ ] rounding seconds?

@@ -17,7 +17,7 @@ public class BerlinClock {
   private int seconds;
 
   public BerlinClock(int hours, int minutes, int seconds) {
-    this.hours = hours == 0 ? HOURS_IN_DAY : hours;
+    this.hours = Rounding.between(1, HOURS_IN_DAY).round(hours);
     this.minutes = minutes;
     this.seconds = seconds;
   }
