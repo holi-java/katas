@@ -33,7 +33,7 @@ public class BerlinClockTest {
   }
 
   @Test public void hours5() throws Exception {
-    BerlinClock clock = new BerlinClock(5, 1);
+    BerlinClock clock = new BerlinClock(5, 0, 1);
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
@@ -45,7 +45,7 @@ public class BerlinClockTest {
   }
 
   @Test public void hours20() throws Exception {
-    BerlinClock clock = new BerlinClock(20, 1);
+    BerlinClock clock = new BerlinClock(20, 0, 1);
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
@@ -57,7 +57,7 @@ public class BerlinClockTest {
   }
 
   @Test public void hours1() throws Exception {
-    BerlinClock clock = new BerlinClock(1, 1);
+    BerlinClock clock = new BerlinClock(1, 0, 1);
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
@@ -69,7 +69,7 @@ public class BerlinClockTest {
   }
 
   @Test public void hours6() throws Exception {
-    BerlinClock clock = new BerlinClock(6, 1);
+    BerlinClock clock = new BerlinClock(6, 0, 1);
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
@@ -81,7 +81,7 @@ public class BerlinClockTest {
   }
 
   @Test public void hours4() throws Exception {
-    BerlinClock clock = new BerlinClock(4, 1);
+    BerlinClock clock = new BerlinClock(4, 0, 1);
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
@@ -89,6 +89,18 @@ public class BerlinClockTest {
     /**/"1111\n" +
     /**/"00000000000\n" +
     /**/"0000"
+    ));
+  }
+
+  @Test public void minutes1() throws Exception {
+    BerlinClock clock = new BerlinClock(0, 1, 1);
+
+    assertThat(clock.display(), equalTo(
+    /**/"0\n" +
+    /**/"0000\n" +
+    /**/"0000\n" +
+    /**/"00000000000\n" +
+    /**/"1000"
     ));
   }
 }

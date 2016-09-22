@@ -3,14 +3,16 @@
  */
 public class BerlinClock {
   private final int hours;
+  private final int minutes;
   private int seconds;
 
   public BerlinClock(int seconds) {
-    this(0, seconds);
+    this(0, 0, seconds);
   }
 
-  public BerlinClock(int hours, int seconds) {
+  public BerlinClock(int hours, int minutes, int seconds) {
     this.hours = hours;
+    this.minutes = minutes;
     this.seconds = seconds;
   }
 
@@ -19,7 +21,7 @@ public class BerlinClock {
         /**/lights(hours / 5) + "\n" +
         /**/lights(hours % 5) + "\n" +
         /**/"00000000000\n" +
-        /**/"0000";
+        /**/lights(minutes % 5);
   }
 
   private String lights(int lit) {
