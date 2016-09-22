@@ -3,6 +3,8 @@ import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * Created by selonj on 16-9-22.
@@ -52,6 +54,15 @@ public class BowlingGameTest {
     game.roll(4);
 
     assertThat(game.score(), equalTo(35));
+  }
+
+  @Test public void raisingIllegalArgumentExceptionIfRollPinsGreaterThanMaxPinsOnOneShotInAFrame() throws Exception {
+    try {
+      game.roll(11);
+      fail("pins out of max pins in a frame");
+    } catch (IllegalArgumentException expected) {
+      assertTrue(true);
+    }
   }
 
   private void rollAStrike() {

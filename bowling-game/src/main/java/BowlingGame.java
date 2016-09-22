@@ -9,6 +9,9 @@ public class BowlingGame {
   private int i;
 
   public void roll(int pins) {
+    if (pins > MAX_FRAMES) {
+      throw new IllegalArgumentException("pins out of bounds in a frame: " + pins);
+    }
     rolls[i] = pins;
     i += step();
   }
