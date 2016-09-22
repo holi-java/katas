@@ -38,6 +38,25 @@ public class BerlinClock {
   }
 
   private String light(String color, boolean lit) {
-    return lit ? color : OFF;
+    return color(lit ? color : OFF).code;
+  }
+
+  private Color color(String code) {
+    switch (code) {
+      case YELLOW: return Color.YELLOW;
+      case RED: return Color.RED;
+      case OFF: return Color.OFF;
+      default: throw new IllegalArgumentException(code);
+    }
+  }
+
+  private enum Color {
+    YELLOW("Y"), RED("R"), OFF("0");
+
+    private String code;
+
+    Color(String code) {
+      this.code = code;
+    }
   }
 }
