@@ -25,10 +25,11 @@ public class BerlinClock {
 
   private String lights(int lit) {
     String lights = "";
-    lights += light(lit >= 1);
-    lights += light(lit >= 2);
-    lights += light(lit >= 3);
-    lights += light(lit >= 4);
+    int i = 1;
+    lights += light(lit >= i); i++;
+    lights += light(lit >= i); i++;
+    lights += light(lit >= i); i++;
+    lights += light(lit >= i); i++;
     return lights;
   }
 
