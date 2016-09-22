@@ -20,7 +20,7 @@ public class BerlinClock {
     return secondsLight() + "\n" +
         /**/lights(hours / 5) + "\n" +
         /**/lights(hours % 5) + "\n" +
-        /**/"00000000000\n" +
+        /**/light(minutes >= 5) + "0000000000\n" +
         /**/lights(minutes % 5);
   }
 
