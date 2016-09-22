@@ -9,16 +9,16 @@ public class BowlingGame {
   private int i;
 
   public void roll(int pins) {
-    rolls[next(pins)] = pins;
+    rolls[i] = pins;
+    i += step();
   }
 
-  private int next(int pins) {
-    if (pins == ALL_FRAME_PINS) {
-      int pos = i;
-      i += 2;
-      return pos;
-    }
-    return i++;
+  private int step() {
+    return strike(frame(i)) ? 2 : 1;
+  }
+
+  private int frame(int shots) {
+    return shots >>> 1;
   }
 
   public int score() {
