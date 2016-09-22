@@ -2,8 +2,9 @@
  * Created by selonj on 16-9-22.
  */
 public class BowlingGame {
-  private static final int MAX_ROLLS = 21;
+  private static final int MAX_FRAMES = 10;
   private static final int ALL_FRAME_PINS = 10;
+  private static final int MAX_ROLLS = (MAX_FRAMES + 1) << 2;
   private int[] rolls = new int[MAX_ROLLS];
   private int i;
 
@@ -22,7 +23,7 @@ public class BowlingGame {
 
   public int score() {
     int score = 0;
-    for (int frame = 0; frame < rolls.length / 2; frame++) {
+    for (int frame = 0; frame < MAX_FRAMES; frame++) {
       score += score(frame);
     }
     return score;
