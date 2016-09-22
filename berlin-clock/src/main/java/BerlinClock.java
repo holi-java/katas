@@ -5,7 +5,7 @@ public class BerlinClock {
   private static final String YELLOW = "Y";
   private static final String RED = "R";
   private static final String OFF = "0";
-  private static final String[] HOURS_LIGHTS = {RED, RED, RED, RED};
+  private static final Color[] HOURS_LIGHTS = {Color.RED, Color.RED, Color.RED, Color.RED};
   private static final String[] BOTTOM_MINUTES_LIGHTS = {YELLOW, YELLOW, YELLOW, YELLOW};
   private static final String[] TOP_MINUTES_LIGHTS = {YELLOW, YELLOW, RED, YELLOW, YELLOW, RED, YELLOW, YELLOW, RED, YELLOW, YELLOW};
   private final int hours;
@@ -43,7 +43,7 @@ public class BerlinClock {
 
   private Color[] colors(String[] colors) {
     Color[] result = new Color[colors.length];
-    int i=0;
+    int i = 0;
     for (String color : colors) {
       result[i++] = color(color);
     }
