@@ -23,7 +23,7 @@ public class BerlinClock {
   private final int seconds;
 
   public BerlinClock(int hours, int minutes, int seconds) {
-    this.hours = HOURS24.round(hours + hours(minutes));
+    this.hours = HOURS24.round(hours + hours(minutes + minutes(seconds)));
     this.minutes = MINUTES_59.round(minutes + minutes(seconds));
     this.seconds = SECONDS_59.round(seconds);
   }

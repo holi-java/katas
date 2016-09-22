@@ -211,4 +211,16 @@ public class BerlinClockTest {
     /**/"Y000"
     ));
   }
+
+  @Test public void roundingPropagation() throws Exception {
+    BerlinClock clock = new BerlinClock(1, 59, 60);
+
+    assertThat(clock.display(), equalTo(
+    /**/"Y\n" +
+    /**/"0000\n" +
+    /**/"RR00\n" +
+    /**/"00000000000\n" +
+    /**/"0000"
+    ));
+  }
 }
