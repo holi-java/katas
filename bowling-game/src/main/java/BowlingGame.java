@@ -13,10 +13,12 @@ public class BowlingGame {
   public int score() {
     int score = 0;
     for (int i = 0; i < rolls.length / 2; i++) {
-      int first = rolls[i];
-      int last = rolls[i + 1];
-      score += first + last;
+      score += score(i);
     }
     return score;
+  }
+
+  private int score(int frame) {
+    return rolls[frame] + rolls[frame + 1];
   }
 }
