@@ -8,7 +8,11 @@ public class BowlingGame {
   private int i;
 
   public void roll(int pins) {
-    rolls[i++] = pins;
+    rolls[next(pins)] = pins;
+  }
+
+  private int next(int pins) {
+    return i++;
   }
 
   public int score() {
