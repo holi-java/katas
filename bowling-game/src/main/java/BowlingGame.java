@@ -3,17 +3,17 @@
  */
 public class BowlingGame {
   private static final int MAX_FRAMES = 20;
-  private int[] scores = new int[MAX_FRAMES];
+  private int[] frames = new int[MAX_FRAMES];
   private int frame;
 
-  public void roll(int balls) {
-    scores[frame++] = balls;
+  public void roll(int pins) {
+    frames[frame++] = pins;
   }
 
   public int score() {
     int total = 0;
-    for (int score : scores) {
-      total += score;
+    for (int pins : frames) {
+      total += pins;
     }
     return total;
   }
