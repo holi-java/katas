@@ -1,4 +1,3 @@
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -14,13 +13,13 @@ public class BowlingGameTest {
   private final BowlingGame game = new BowlingGame();
 
   @Test public void noPinsRollsDown() throws Exception {
-    rolls(0);
+    rolls(0, 20);
 
     assertThat(game.score(), equalTo(0));
   }
 
   @Test public void rollsOnePinDownAtATime() throws Exception {
-    rolls(1);
+    rolls(1, 20);
 
     assertThat(game.score(), equalTo(20));
   }
@@ -79,6 +78,14 @@ public class BowlingGameTest {
     }
   }
 
+  @Test public void skipRollsOutOfTheMaxRolls() throws Exception {
+    rolls(0, 20);
+    game.roll(3);
+    game.roll(4);
+
+    assertThat(game.score(), equalTo(0));
+  }
+
   private void rollAStrike() {
     game.roll(10);
   }
@@ -86,10 +93,6 @@ public class BowlingGameTest {
   private void rollASpare() {
     game.roll(3);
     game.roll(7);
-  }
-
-  private void rolls(int pins) {
-    rolls(pins, 20);
   }
 
   private void rolls(int pins, int shots) {
