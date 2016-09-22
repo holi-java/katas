@@ -47,10 +47,14 @@ public class BowlingGameTest {
 
   @Test public void rollsAllPinsDownOnTheFirstShotAtLastFrame() throws Exception {
     rolls(1, 18);
-    game.roll(10);
+    rollAStrike();
     game.roll(3);
 
     assertThat(game.score(), equalTo(31));
+  }
+
+  private void rollAStrike() {
+    game.roll(10);
   }
 
   private void rollASpare() {
