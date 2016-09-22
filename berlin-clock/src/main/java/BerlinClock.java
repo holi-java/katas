@@ -2,9 +2,6 @@
  * Created by selonj on 16-9-23.
  */
 public class BerlinClock {
-  private static final String YELLOW = "Y";
-  private static final String RED = "R";
-  private static final String OFF = "0";
   private static final Color[] HOURS_LIGHTS = {Color.RED, Color.RED, Color.RED, Color.RED};
   private static final Color[] TOP_MINUTES_LIGHTS = {Color.YELLOW, Color.YELLOW, Color.RED, Color.YELLOW, Color.YELLOW, Color.RED, Color.YELLOW, Color.YELLOW, Color.RED, Color.YELLOW, Color.YELLOW};
   private static final Color[] BOTTOM_MINUTES_LIGHTS = {Color.YELLOW, Color.YELLOW, Color.YELLOW, Color.YELLOW};
@@ -30,10 +27,6 @@ public class BerlinClock {
         /**/lights(BOTTOM_MINUTES_LIGHTS, minutes % 5);
   }
 
-  private String lights(String[] colors, int litLights) {
-    return lights(colors(colors), litLights);
-  }
-
   private String lights(Color[] colors, int litLights) {
     String lights = "";
     int nth = 1;
@@ -41,25 +34,7 @@ public class BerlinClock {
     return lights;
   }
 
-  private Color[] colors(String[] colors) {
-    Color[] result = new Color[colors.length];
-    int i = 0;
-    for (String color : colors) {
-      result[i++] = color(color);
-    }
-    return result;
-  }
-
   private String light(Color color, boolean lit) {
-    return (lit ? color : color(OFF)).code;
-  }
-
-  private Color color(String code) {
-    switch (code) {
-      case YELLOW: return Color.YELLOW;
-      case RED: return Color.RED;
-      case OFF: return Color.OFF;
-      default: throw new IllegalArgumentException(code);
-    }
+    return (lit ? color : Color.OFF).code;
   }
 }
