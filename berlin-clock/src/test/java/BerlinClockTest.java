@@ -37,7 +37,7 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"1000\n" +
+    /**/"R000\n" +
     /**/"0000\n" +
     /**/"00000000000\n" +
     /**/"0000"
@@ -49,7 +49,7 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"1111\n" +
+    /**/"RRRR\n" +
     /**/"0000\n" +
     /**/"00000000000\n" +
     /**/"0000"
@@ -73,7 +73,7 @@ public class BerlinClockTest {
 
     assertThat(clock.display(), equalTo(
     /**/"0\n" +
-    /**/"1000\n" +
+    /**/"R000\n" +
     /**/"1000\n" +
     /**/"00000000000\n" +
     /**/"0000"

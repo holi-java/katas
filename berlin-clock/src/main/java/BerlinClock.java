@@ -19,15 +19,15 @@ public class BerlinClock {
 
   public String display() {
     return light(YELLOW, seconds % 2 == 0) + "\n" +
-        /**/lights(4, hours / 5) + "\n" +
-        /**/lights(4, hours % 5) + "\n" +
-        /**/lights(11, minutes / 5) + "\n" +
-        /**/lights(4, minutes % 5);
+        /**/lights("R", 4, hours / 5) + "\n" +
+        /**/lights("1", 4, hours % 5) + "\n" +
+        /**/lights("1", 11, minutes / 5) + "\n" +
+        /**/lights("1", 4, minutes % 5);
   }
 
-  private String lights(int count, int lit) {
+  private String lights(String color, int count, int lit) {
     String lights = "";
-    for (int i = 1; i <= count; i++) lights += light("1", lit >= i);
+    for (int i = 1; i <= count; i++) lights += light(color, lit >= i);
     return lights;
   }
 
