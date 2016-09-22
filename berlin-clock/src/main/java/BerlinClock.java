@@ -3,6 +3,8 @@
  */
 public class BerlinClock {
   private static final String YELLOW = "Y";
+  private static final String RED = "R";
+  private static final String OFF = "0";
   private final int hours;
   private final int minutes;
   private int seconds;
@@ -19,8 +21,8 @@ public class BerlinClock {
 
   public String display() {
     return light(YELLOW, seconds % 2 == 0) + "\n" +
-        /**/lights("R", 4, hours / 5) + "\n" +
-        /**/lights("1", 4, hours % 5) + "\n" +
+        /**/lights(RED, 4, hours / 5) + "\n" +
+        /**/lights(RED, 4, hours % 5) + "\n" +
         /**/lights("1", 11, minutes / 5) + "\n" +
         /**/lights("1", 4, minutes % 5);
   }
@@ -32,6 +34,6 @@ public class BerlinClock {
   }
 
   private String light(String color, boolean lit) {
-    return lit ? color : "0";
+    return lit ? color : OFF;
   }
 }
