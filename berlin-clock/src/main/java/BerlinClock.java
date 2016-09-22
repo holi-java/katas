@@ -16,12 +16,15 @@ public class BerlinClock {
   }
 
   public String display() {
-    int lit = hours / 5;
     return secondsLight() + "\n" +
-        /**/light(lit >= 1) + light(lit >= 2) + light(lit >= 3) + light(lit >= 4) + "\n" +
+        /**/lights(hours / 5) + "\n" +
         /**/light(hours % 5 > 0) + "000\n" +
         /**/"00000000000\n" +
         /**/"0000";
+  }
+
+  private String lights(int lit) {
+    return light(lit >= 1) + light(lit >= 2) + light(lit >= 3) + light(lit >= 4);
   }
 
   private String secondsLight() {
