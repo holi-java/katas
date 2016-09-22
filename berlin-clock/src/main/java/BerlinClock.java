@@ -24,7 +24,12 @@ public class BerlinClock {
   }
 
   private String lights(int lit) {
-    return light(lit >= 1) + light(lit >= 2) + light(lit >= 3) + light(lit >= 4);
+    String lights = "";
+    lights += light(lit >= 1);
+    lights += light(lit >= 2);
+    lights += light(lit >= 3);
+    lights += light(lit >= 4);
+    return lights;
   }
 
   private String secondsLight() {
