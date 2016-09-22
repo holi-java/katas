@@ -23,7 +23,7 @@ public class BowlingGameTest {
     assertThat(game.score(), equalTo(20));
   }
 
-  @Ignore @Test public void rollsAllPinsInAFrame() throws Exception {
+  @Test public void rollsAllPinsInAFrame() throws Exception {
     game.roll(3);
     game.roll(7);
     rolls(1, 18);

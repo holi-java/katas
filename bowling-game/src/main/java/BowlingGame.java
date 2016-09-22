@@ -19,6 +19,11 @@ public class BowlingGame {
   }
 
   private int score(int frame) {
-    return rolls[frame] + rolls[frame + 1];
+    int first = frame << 1;
+    int score = rolls[first] + rolls[first + 1];
+    if (score == 10) {
+      score += 1;
+    }
+    return score;
   }
 }
