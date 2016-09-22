@@ -9,7 +9,7 @@
 - [x] displays hours 4.
 - [ ] ?displays hours 24 & 0.
 - [x] displays minutes 5.
-- [ ] displays minutes 15.
+- [x] displays minutes 15.
 - [ ] displays minutes 55.
 - [x] displays minutes 1.
 - [x] displays minutes 4.
