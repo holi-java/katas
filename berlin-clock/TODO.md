@@ -12,5 +12,5 @@
 - [ ] displays minutes 15.
 - [ ] displays minutes 55.
 - [x] displays minutes 1.
-- [ ] displays minutes 4.
+- [x] displays minutes 4.
 - [ ] checking all fields color when all lights on in each row. 
