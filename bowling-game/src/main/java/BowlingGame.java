@@ -21,7 +21,7 @@ public class BowlingGame {
 
   private int score(int frame) {
     if (spare(frame)) {
-      return pins(frame) + 1;
+      return pins(frame) + first(frame + 1);
     }
     return pins(frame);
   }
@@ -31,7 +31,14 @@ public class BowlingGame {
   }
 
   private int pins(int frame) {
-    int first = frame << 1;
-    return rolls[first] + rolls[first + 1];
+    return first(frame) + last(frame);
+  }
+
+  private int first(int frame) {
+    return rolls[frame << 1];
+  }
+
+  private int last(int frame) {
+    return rolls[(frame << 1) + 1];
   }
 }
