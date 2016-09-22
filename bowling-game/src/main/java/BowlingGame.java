@@ -12,6 +12,11 @@ public class BowlingGame {
   }
 
   private int next(int pins) {
+    if (pins == ALL_FRAME_PINS) {
+      int pos = i;
+      i += 2;
+      return pos;
+    }
     return i++;
   }
 
@@ -24,10 +29,17 @@ public class BowlingGame {
   }
 
   private int score(int frame) {
+    if (strike(frame)) {
+      return pins(frame) + pins(frame + 1);
+    }
     if (spare(frame)) {
       return pins(frame) + first(frame + 1);
     }
     return pins(frame);
+  }
+
+  private boolean strike(int frame) {
+    return first(frame) == ALL_FRAME_PINS;
   }
 
   private boolean spare(int frame) {
