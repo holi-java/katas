@@ -15,7 +15,7 @@ public class BowlingGame {
 
   private int step() {
     int frame = frame(i);
-    if (pins(frame) > MAX_FRAMES) {
+    if (pins(frame) > ALL_FRAME_PINS) {
       throw new IllegalArgumentException(String.format("Pins out of bounds in frame %d: %d", frame, pins(frame)));
     }
     return strike(frame) ? 2 : 1;
