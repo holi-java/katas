@@ -13,14 +13,27 @@ public class BerlinClock {
 
   private static final int HOURS_IN_DAY = 24;
   private static final int MINUTES_IN_HOUR = 60;
+  private static final int SECONDS_IN_MINUTE = 60;
+  private static final Rounding SECONDS_59 = Rounding.between(0, SECONDS_IN_MINUTE - 1);
+  private static final Rounding HOURS24 = Rounding.between(1, HOURS_IN_DAY);
+  private static final Rounding MINUTES_59 = Rounding.between(0, MINUTES_IN_HOUR - 1);
+
   private final int hours;
   private final int minutes;
   private final int seconds;
 
   public BerlinClock(int hours, int minutes, int seconds) {
-    this.hours = Rounding.between(1, HOURS_IN_DAY).round(hours + (minutes / MINUTES_IN_HOUR));
-    this.minutes = Rounding.between(0, MINUTES_IN_HOUR - 1).round(minutes);
-    this.seconds = seconds;
+    this.hours = HOURS24.round(hours + hours(minutes));
+    this.minutes = MINUTES_59.round(minutes + minutes(seconds));
+    this.seconds = SECONDS_59.round(seconds);
+  }
+
+  private int hours(int minutes) {
+    return minutes / MINUTES_IN_HOUR;
+  }
+
+  private int minutes(int seconds) {
+    return seconds / SECONDS_IN_MINUTE;
   }
 
   public String display() {

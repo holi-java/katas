@@ -199,4 +199,16 @@ public class BerlinClockTest {
     /**/"0000"
     ));
   }
+
+  @Test public void roundsSecondsAndAddsUpToMinutes() throws Exception {
+    BerlinClock clock = new BerlinClock(0, 0, 60);
+
+    assertThat(clock.display(), equalTo(
+    /**/"Y\n" +
+    /**/"RRRR\n" +
+    /**/"RRRR\n" +
+    /**/"00000000000\n" +
+    /**/"Y000"
+    ));
+  }
 }

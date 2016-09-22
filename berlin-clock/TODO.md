@@ -15,5 +15,5 @@
 - [x] checking all fields color when all lights on in each row. 
 - [x] rounding hours?
 - [x] rounding minutes?
-- [ ] rounding seconds?
+- [x] rounding seconds?
 - [ ] rounding propagation 
