@@ -2,7 +2,7 @@
  * Created by selonj on 16-9-22.
  */
 public class BowlingGame {
-  private static final int MAX_ROLLS = 20;
+  private static final int MAX_ROLLS = 21;
   private static final int ALL_FRAME_PINS = 10;
   private int[] rolls = new int[MAX_ROLLS];
   private int i;
