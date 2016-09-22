@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+gradlew project | grep "':" | wc -l | xargs -I {x} echo 'kata count:{x}'
