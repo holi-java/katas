@@ -30,10 +30,10 @@ public class BerlinClock {
         /**/lights(BOTTOM_MINUTES_LIGHTS, minutes % 5);
   }
 
-  private String lights(String[] colors, int lit) {
+  private String lights(String[] colors, int litLights) {
     String lights = "";
     int nth = 1;
-    for (String color : colors) lights += light(color, nth++ <= lit);
+    for (String color : colors) lights += light(color, nth++ <= litLights);
     return lights;
   }
 
