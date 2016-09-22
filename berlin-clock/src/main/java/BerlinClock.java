@@ -6,8 +6,8 @@ public class BerlinClock {
   private static final String RED = "R";
   private static final String OFF = "0";
   private static final Color[] HOURS_LIGHTS = {Color.RED, Color.RED, Color.RED, Color.RED};
+  private static final Color[] TOP_MINUTES_LIGHTS = {Color.YELLOW, Color.YELLOW, Color.RED, Color.YELLOW, Color.YELLOW, Color.RED, Color.YELLOW, Color.YELLOW, Color.RED, Color.YELLOW, Color.YELLOW};
   private static final Color[] BOTTOM_MINUTES_LIGHTS = {Color.YELLOW, Color.YELLOW, Color.YELLOW, Color.YELLOW};
-  private static final String[] TOP_MINUTES_LIGHTS = {YELLOW, YELLOW, RED, YELLOW, YELLOW, RED, YELLOW, YELLOW, RED, YELLOW, YELLOW};
   private final int hours;
   private final int minutes;
   private int seconds;
