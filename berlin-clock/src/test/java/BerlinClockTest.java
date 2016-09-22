@@ -56,7 +56,7 @@ public class BerlinClockTest {
     ));
   }
 
-  @Test public void hours1() throws Exception {
+  @Test public void hour1() throws Exception {
     BerlinClock clock = new BerlinClock(1, 0, 1);
 
     assertThat(clock.display(), equalTo(
@@ -92,7 +92,7 @@ public class BerlinClockTest {
     ));
   }
 
-  @Test public void minutes1() throws Exception {
+  @Test public void minute1() throws Exception {
     BerlinClock clock = new BerlinClock(0, 1, 1);
 
     assertThat(clock.display(), equalTo(
