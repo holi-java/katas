@@ -8,8 +8,9 @@ import static org.junit.Assert.assertThat;
  */
 public class BowlingGameTest {
 
+  private final BowlingGame game = new BowlingGame();
+
   @Test public void noBallRollsDown() throws Exception {
-    BowlingGame game = new BowlingGame();
 
     for (int i = 0; i < 20; i++) {
       game.roll(0);
@@ -19,8 +20,6 @@ public class BowlingGameTest {
   }
 
   @Test public void rollsOneDownAtATime() throws Exception {
-    BowlingGame game = new BowlingGame();
-
     for (int i = 0; i < 20; i++) {
       game.roll(1);
     }
