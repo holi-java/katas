@@ -17,13 +17,17 @@ public class BerlinClock {
 
   public String display() {
     return secondsLight() + "\n" +
-        /**/(hours > 0 ? "1" : "0") + "000\n" +
+        /**/light(hours > 0) + "000\n" +
         /**/"0000\n" +
         /**/"00000000000\n" +
         /**/"0000";
   }
 
   private String secondsLight() {
-    return seconds % 2 == 0 ? "1" : "0";
+    return light(seconds % 2 == 0);
+  }
+
+  private String light(boolean lit) {
+    return lit ? "1" : "0";
   }
 }
