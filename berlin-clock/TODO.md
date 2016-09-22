@@ -16,3 +16,4 @@
 - [x] rounding hours?
 - [x] rounding minutes?
 - [ ] rounding seconds?
+- [ ] rounding propagation 
