@@ -8,24 +8,31 @@ import org.junit.runners.Parameterized;
  */
 @RunWith(Parameterized.class)
 abstract public class AbstractRangeTest {
-
+  protected final int start;
+  protected final int last;
   protected final Range range;
 
-  protected AbstractRangeTest(Range range) {
-    this.range = range;
+  protected AbstractRangeTest(int start, int last) {
+    this.start = start;
+    this.last = last;
+    this.range = Range.between(start, last);
   }
 
   @Parameterized.Parameters(name = "{0}")
   public static Collection<Object[]> data() {
     return Arrays.asList(
-     /**/ new Object[] {Range.between(0, 10)}
-        , new Object[] {Range.between(1, 11)}
-        , new Object[] {Range.between(-1, 9)}
-        , new Object[] {Range.between(-11, -1)}
-        , new Object[] {Range.between(10, 0)}
-        , new Object[] {Range.between(11, 1)}
-        , new Object[] {Range.between(9, -1)}
-        , new Object[] {Range.between(-1, -11)}
+     /**/ test(0, 10)
+        , test(1, 11)
+        , test(-1, 9)
+        , test(-11, -1)
+        , test(10, 0)
+        , test(11, 1)
+        , test(9, -1)
+        , test(-1, -11)
     );
+  }
+
+  private static Object[] test(int start, int last) {
+    return new Object[] {start, last};
   }
 }

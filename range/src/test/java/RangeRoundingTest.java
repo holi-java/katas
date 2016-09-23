@@ -1,8 +1,4 @@
-import java.util.Arrays;
-import java.util.Collection;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -13,8 +9,8 @@ import static org.junit.Assert.assertThat;
 
 public class RangeRoundingTest extends AbstractRangeTest {
 
-  public RangeRoundingTest(Range range) {
-    super(range);
+  public RangeRoundingTest(int start, int last) {
+    super(start, last);
   }
 
   @Test public void startValue() throws Exception {
