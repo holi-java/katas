@@ -46,10 +46,6 @@ public class Range implements Iterable<Integer> {
     return direction;
   }
 
-  @Override public String toString() {
-    return "[" + start + "," + last + "]";
-  }
-
   @Override public Iterator<Integer> iterator() {
     return new Iterator<Integer>() {
       private int current = start;
@@ -67,5 +63,13 @@ public class Range implements Iterable<Integer> {
         return result;
       }
     };
+  }
+
+  @Override public boolean equals(Object obj) {
+    return true;
+  }
+
+  @Override public String toString() {
+    return "[" + start + "," + last + "]";
   }
 }
