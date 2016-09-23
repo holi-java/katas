@@ -26,8 +26,12 @@ public class Stack {
 
   public Object pop() {
     if (isEmpty()) throw new NoSuchElementException();
-    Object element = elements[--i];
-    elements[i] = null;
+    return remove(--i);
+  }
+
+  private Object remove(int pos) {
+    Object element = elements[pos];
+    elements[pos] = null;
     return element;
   }
 
