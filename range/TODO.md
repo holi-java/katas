@@ -12,4 +12,4 @@
 - [x] [1,10].round(-10) = 10
 - [ ] equals()
 - [ ] hashCode()
-- [ ] iterator()
+- [x] iterator()

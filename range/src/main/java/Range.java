@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * Created by selonj on 16-9-23.
@@ -58,6 +59,9 @@ public class Range implements Iterable<Integer> {
       }
 
       @Override public Integer next() {
+        if (!hasNext()) {
+          throw new NoSuchElementException();
+        }
         int result = current;
         current += direction.shift(1);
         return result;
