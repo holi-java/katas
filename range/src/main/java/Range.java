@@ -26,13 +26,7 @@ public class Range {
   }
 
   public int offset(int number) {
-    if (direction == DOWN) {
-      if (start == number) {
-        return 0;
-      }
-      return (start - number) % size;
-    }
-    return direction * (size + (number % size) - start) % size;
+    return (size + direction * ((number % size) - start)) % size;
   }
 
   public int start() {
