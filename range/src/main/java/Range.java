@@ -5,12 +5,12 @@ public class Range {
   private final int start;
   private final int last;
   private final int size;
-  private int direction;
+  private final Direction direction;
 
   public Range(int start, int last) {
     this.start = start;
     this.last = last;
-    direction = Direction.of(start, last).direction;
+    direction = Direction.of(start, last);
     size = direction() * (last - start + direction());
   }
 
@@ -39,7 +39,7 @@ public class Range {
   }
 
   public int direction() {
-    return direction;
+    return direction.direction;
   }
 
   @Override public String toString() {
