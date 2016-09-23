@@ -18,7 +18,7 @@ abstract public class AbstractRangeTest {
     this.range = Range.between(start, last);
   }
 
-  @Parameterized.Parameters(name = "{0}")
+  @Parameterized.Parameters(name = "[{0},{1}]")
   public static Collection<Object[]> data() {
     return Arrays.asList(
      /**/ test(0, 10)
