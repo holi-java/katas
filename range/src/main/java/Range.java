@@ -3,15 +3,15 @@
  */
 public class Range {
   private final int start;
-  private final int end;
+  private final int last;
 
-  public Range(int start, int end) {
+  public Range(int start, int last) {
     this.start = start;
-    this.end = end;
+    this.last = last;
   }
 
   public static Range between(int start, int last) {
-    return new Range(start, last + 1);
+    return new Range(start, last);
   }
 
   public int round(int number) {
@@ -19,6 +19,6 @@ public class Range {
   }
 
   public int size() {
-    return end - start;
+    return last - start + 1;
   }
 }
