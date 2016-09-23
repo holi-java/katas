@@ -16,4 +16,8 @@ public class RangeEqualityTest {
   @Test public void doesNotEqualsIfEachRangeHavingDifferentStarts() throws Exception {
     assertThat(Range.between(1, 10), not(equalTo(Range.between(2, 10))));
   }
+
+  @Test public void doesNotEqualsIfEachRangeHavingDifferentLasts() throws Exception {
+    assertThat(Range.between(1, 10), not(equalTo(Range.between(1, 11))));
+  }
 }

@@ -67,7 +67,7 @@ public class Range implements Iterable<Integer> {
 
   @Override public boolean equals(Object obj) {
     Range that = (Range) obj;
-    return this.start == that.start;
+    return this.start == that.start && this.last == that.last;
   }
 
   @Override public String toString() {
