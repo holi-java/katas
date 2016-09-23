@@ -1,7 +1,10 @@
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
 /**
  * Created by selonj on 16-9-23.
  */
-public class Range {
+public class Range implements Iterable<Integer> {
   private final int start;
   private final int last;
   private final int size;
@@ -41,6 +44,37 @@ public class Range {
 
   public Direction direction() {
     return direction;
+  }
+
+  @Override public Iterator<Integer> iterator() {
+    return new Iterator<Integer>() {
+      private int current = start;
+
+      @Override public boolean hasNext() {
+        return direction.shift(current) <= direction.shift(last);
+      }
+
+      @Override public Integer next() {
+        if (!hasNext()) {
+          throw new NoSuchElementException();
+        }
+        int result = current;
+        current += direction.shift(1);
+        return result;
+      }
+    };
+  }
+
+  @Override public boolean equals(Object obj) {
+    if (obj == null || obj.getClass() != Range.class) {
+      return false;
+    }
+    Range that = (Range) obj;
+    return this.start == that.start && this.last == that.last;
+  }
+
+  @Override public int hashCode() {
+    return start * 31 + last;
   }
 
   @Override public String toString() {
