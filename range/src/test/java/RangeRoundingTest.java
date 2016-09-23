@@ -22,7 +22,8 @@ public class RangeRoundingTest {
   @Parameterized.Parameters(name = "{0}")
   public static Collection<Object[]> data() {
     return Arrays.asList(new Object[][] {
-        new Object[] {Range.between(0, 10)}
+        new Object[] {Range.between(0, 10)},
+        new Object[] {Range.between(1, 10)}
     });
   }
 

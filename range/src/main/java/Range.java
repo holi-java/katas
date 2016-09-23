@@ -18,9 +18,9 @@ public class Range {
 
   public int round(int number) {
     if (number < 0) {
-      return round(size + number % size);
+      return start + round(size + number % size);
     }
-    return number % size;
+    return start + (size + number - start) % size;
   }
 
   public int start() {
