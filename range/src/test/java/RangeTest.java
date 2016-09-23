@@ -8,11 +8,6 @@ import static org.junit.Assert.assertThat;
  */
 public class RangeTest {
 
-  @Test public void size() throws Exception {
-    assertThat(Range.between(0, 10).size(), equalTo(11));
-    assertThat(Range.between(10, 0).size(), equalTo(11));
-  }
-
   @Test public void start() throws Exception {
     assertThat(Range.between(0, 10).start(), equalTo(0));
   }
