@@ -1,7 +1,9 @@
+import java.util.Iterator;
+
 /**
  * Created by selonj on 16-9-23.
  */
-public class Range {
+public class Range implements Iterable<Integer> {
   private final int start;
   private final int last;
   private final int size;
@@ -45,5 +47,21 @@ public class Range {
 
   @Override public String toString() {
     return "[" + start + "," + last + "]";
+  }
+
+  @Override public Iterator<Integer> iterator() {
+    return new Iterator<Integer>() {
+      private int pos = start;
+      private boolean last = false;
+
+      @Override public boolean hasNext() {
+        return !last;
+      }
+
+      @Override public Integer next() {
+        last = true;
+        return pos;
+      }
+    };
   }
 }
