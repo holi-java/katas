@@ -13,6 +13,7 @@
 - [Bowling Game](bowling-game)
 - [Berlin Clock](berlin-clock)
 - [Range](range)
+- [Stack](stack)
 
 
 # How to kick start a kata
