@@ -12,6 +12,7 @@
 - [Array Enumeration](array-enumeration)
 - [Bowling Game](bowling-game)
 - [Berlin Clock](berlin-clock)
+- [Range](range)
 
 
 # How to kick start a kata
