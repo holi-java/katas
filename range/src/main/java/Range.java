@@ -4,10 +4,12 @@
 public class Range {
   private final int start;
   private final int last;
+  private int size;
 
   public Range(int start, int last) {
     this.start = start;
     this.last = last;
+    size = last - start + 1;
   }
 
   public static Range between(int start, int last) {
@@ -15,10 +17,14 @@ public class Range {
   }
 
   public int round(int number) {
-    return (size() + (number % size())) % size();
+    return round0(size() + round0(number));
+  }
+
+  private int round0(int number) {
+    return number % size();
   }
 
   public int size() {
-    return last - start + 1;
+    return size;
   }
 }
