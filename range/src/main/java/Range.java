@@ -4,7 +4,7 @@
 public class Range {
   private final int start;
   private final int last;
-  private int size;
+  private final int size;
 
   public Range(int start, int last) {
     this.start = start;
@@ -18,9 +18,9 @@ public class Range {
 
   public int round(int number) {
     if (number < 0) {
-      return round(size() + number % size());
+      return round(size + number % size);
     }
-    return number % size();
+    return number % size;
   }
 
   public int size() {
