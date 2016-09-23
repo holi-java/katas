@@ -2,8 +2,6 @@
  * Created by selonj on 16-9-23.
  */
 public class Range {
-  private static final int UP = 1;
-  private static final int DOWN = -1;
   private final int start;
   private final int last;
   private final int size;
