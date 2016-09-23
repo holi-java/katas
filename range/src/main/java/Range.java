@@ -15,7 +15,7 @@ public class Range {
   }
 
   public int round(int number) {
-    return number;
+    return number % size();
   }
 
   public int size() {
