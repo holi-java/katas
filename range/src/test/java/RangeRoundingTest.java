@@ -14,18 +14,21 @@ import static org.junit.Assert.assertThat;
 public class RangeRoundingTest {
 
   private final Range range;
+  private int direction;
 
-  public RangeRoundingTest(Range range) {
+  public RangeRoundingTest(Range range, int direction) {
     this.range = range;
+    this.direction = direction;
   }
 
   @Parameterized.Parameters(name = "{0}")
   public static Collection<Object[]> data() {
     return Arrays.asList(
-        new Object[] {Range.between(0, 10)},
-        new Object[] {Range.between(1, 11)},
-        new Object[] {Range.between(-1, 9)},
-        new Object[] {Range.between(-11, -1)}
+     /**/ new Object[] {Range.between(0, 10), 1}
+        , new Object[] {Range.between(1, 11), 1}
+        , new Object[] {Range.between(-1, 9), 1}
+        , new Object[] {Range.between(-11, -1), 1}
+        //, new Object[] {Range.between(10, 0), 1}
     );
   }
 
