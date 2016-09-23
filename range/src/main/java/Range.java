@@ -11,7 +11,7 @@ public class Range {
     this.start = start;
     this.last = last;
     direction = Direction.of(start, last).direction;
-    size = direction * (last - start + direction);
+    size = direction() * (last - start + direction());
   }
 
   public static Range between(int start, int last) {
@@ -19,11 +19,11 @@ public class Range {
   }
 
   public int round(int number) {
-    return start + direction * offset(number);
+    return start + direction() * offset(number);
   }
 
   public int offset(int number) {
-    return (size + direction * ((number % size) - start)) % size;
+    return (size + direction() * ((number % size) - start)) % size;
   }
 
   public int start() {
