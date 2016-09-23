@@ -30,7 +30,7 @@ public class Range {
       if (start == number) {
         return 0;
       }
-      return start - number;
+      return (start - number) % size;
     }
     return direction * (size + (number % size) - start) % size;
   }

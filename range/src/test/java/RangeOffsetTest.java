@@ -24,4 +24,8 @@ public class RangeOffsetTest extends AbstractRangeTest {
   @Test public void last() throws Exception {
     assertThat(range.offset(range.last()), equalTo(range.size() - 1));
   }
+
+  @Test public void afterLast() throws Exception {
+    assertThat(range.offset(range.last() + range.direction()), equalTo(0));
+  }
 }
