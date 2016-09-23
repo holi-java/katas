@@ -21,10 +21,10 @@ public class RangeRoundingTest {
 
   @Parameterized.Parameters(name = "{0}")
   public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {
+    return Arrays.asList(
         new Object[] {Range.between(0, 10)},
         new Object[] {Range.between(1, 10)}
-    });
+    );
   }
 
   @Test public void startValue() throws Exception {
