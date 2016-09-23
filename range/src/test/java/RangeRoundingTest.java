@@ -23,7 +23,9 @@ public class RangeRoundingTest {
   public static Collection<Object[]> data() {
     return Arrays.asList(
         new Object[] {Range.between(0, 10)},
-        new Object[] {Range.between(1, 10)}
+        new Object[] {Range.between(1, 11)},
+        new Object[] {Range.between(-1, 9)},
+        new Object[] {Range.between(-11, -1)}
     );
   }
 
@@ -41,6 +43,6 @@ public class RangeRoundingTest {
 
   @Test public void beforeStartValueShouldBeRounded() throws Exception {
     assertThat(range.round(range.start() - 1), equalTo(range.last()));
-    assertThat(range.round(-1 - range.size()), equalTo(range.last()));
+    assertThat(range.round(range.start() - 1 - range.size()), equalTo(range.last()));
   }
 }
