@@ -20,6 +20,10 @@ public class RangeIterationTest {
     assertThat(toList(Range.between(1, 3)), equalTo(asList(1, 2, 3)));
   }
 
+  @Test public void downToLast() throws Exception {
+    assertThat(toList(Range.between(3, 1)), equalTo(asList(3, 2, 1)));
+  }
+
   private List<Integer> toList(Range range) {
     return stream(range.spliterator(), false).collect(Collectors.toList());
   }

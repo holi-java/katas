@@ -54,11 +54,13 @@ public class Range implements Iterable<Integer> {
       private int current = start;
 
       @Override public boolean hasNext() {
-        return current <= last;
+        return direction.shift(current) <= direction.shift(last);
       }
 
       @Override public Integer next() {
-        return current++;
+        int result = current;
+        current += direction.shift(1);
+        return result;
       }
     };
   }
