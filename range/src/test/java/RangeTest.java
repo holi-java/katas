@@ -23,4 +23,8 @@ public class RangeTest extends AbstractRangeTest {
   @Test public void last() throws Exception {
     assertThat(range.last(), equalTo(last));
   }
+
+  @Test public void hash() throws Exception {
+    assertThat(range.hashCode(), equalTo(start * 31 + last));
+  }
 }

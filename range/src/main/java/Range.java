@@ -73,6 +73,10 @@ public class Range implements Iterable<Integer> {
     return this.start == that.start && this.last == that.last;
   }
 
+  @Override public int hashCode() {
+    return start * 31 + last;
+  }
+
   @Override public String toString() {
     return "[" + start + "," + last + "]";
   }
