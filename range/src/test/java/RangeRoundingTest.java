@@ -10,27 +10,11 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by selonj on 16-9-23.
  */
-@RunWith(Parameterized.class)
-public class RangeRoundingTest {
 
-  private final Range range;
+public class RangeRoundingTest extends AbstractRangeTest {
 
   public RangeRoundingTest(Range range) {
-    this.range = range;
-  }
-
-  @Parameterized.Parameters(name = "{0}")
-  public static Collection<Object[]> data() {
-    return Arrays.asList(
-     /**/ new Object[] {Range.between(0, 10)}
-        , new Object[] {Range.between(1, 11)}
-        , new Object[] {Range.between(-1, 9)}
-        , new Object[] {Range.between(-11, -1)}
-        , new Object[] {Range.between(10, 0)}
-        , new Object[] {Range.between(11, 1)}
-        , new Object[] {Range.between(9, -1)}
-        , new Object[] {Range.between(-1, -11)}
-    );
+    super(range);
   }
 
   @Test public void startValue() throws Exception {
