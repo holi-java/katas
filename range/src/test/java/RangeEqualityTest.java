@@ -20,4 +20,8 @@ public class RangeEqualityTest {
   @Test public void doesNotEqualsIfEachRangeHavingDifferentLasts() throws Exception {
     assertThat(Range.between(1, 10), not(equalTo(Range.between(1, 11))));
   }
+
+  @Test public void doesNotEqualsToNull() throws Exception {
+    assertThat(Range.between(1, 10), not(equalTo(null)));
+  }
 }
