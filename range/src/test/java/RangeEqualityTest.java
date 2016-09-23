@@ -1,6 +1,7 @@
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.not;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -10,5 +11,9 @@ public class RangeEqualityTest {
 
   @Test public void equalsWhichStartAndLastAreTheSame() throws Exception {
     assertThat(Range.between(1, 10), equalTo(Range.between(1, 10)));
+  }
+
+  @Test public void doesNotEqualsIfEachRangeHavingDifferentStarts() throws Exception {
+    assertThat(Range.between(1, 10), not(equalTo(Range.between(2, 10))));
   }
 }
