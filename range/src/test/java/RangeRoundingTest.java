@@ -26,7 +26,10 @@ public class RangeRoundingTest {
         , new Object[] {Range.between(1, 11)}
         , new Object[] {Range.between(-1, 9)}
         , new Object[] {Range.between(-11, -1)}
-        //, new Object[] {Range.between(10, 0)}
+        , new Object[] {Range.between(10, 0)}
+        , new Object[] {Range.between(11, 1)}
+        , new Object[] {Range.between(9, -1)}
+        , new Object[] {Range.between(-1, -11)}
     );
   }
 
@@ -39,11 +42,11 @@ public class RangeRoundingTest {
   }
 
   @Test public void afterLastValueShouldBeRounded() throws Exception {
-    assertThat(range.round(range.last() + 1), equalTo(range.start()));
+    assertThat(range.round(range.last() + range.direction()), equalTo(range.start()));
   }
 
   @Test public void beforeStartValueShouldBeRounded() throws Exception {
-    assertThat(range.round(range.start() - 1), equalTo(range.last()));
-    assertThat(range.round(range.start() - 1 - range.size()), equalTo(range.last()));
+    assertThat(range.round(range.start() - range.direction()), equalTo(range.last()));
+    assertThat(range.round(range.start() - range.direction() - range.direction() * range.size()), equalTo(range.last()));
   }
 }

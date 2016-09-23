@@ -21,11 +21,15 @@ public class Range {
   }
 
   public int round(int number) {
-    return start + offset(number);
+    return start0() + direction * offset(number);
+  }
+
+  private int start0() {
+    return direction == UP ? start : last;
   }
 
   public int offset(int number) {
-    return (size + (number % size) - start) % size;
+    return direction * (size + (number % size) - start0()) % size;
   }
 
   public int start() {
