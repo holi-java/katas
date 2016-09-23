@@ -27,4 +27,8 @@ public class RangeTest extends AbstractRangeTest {
   @Test public void hash() throws Exception {
     assertThat(range.hashCode(), equalTo(start * 31 + last));
   }
+
+  @Test public void stringify() throws Exception {
+    assertThat(range.toString(), equalTo(String.format("[%d,%d]", start, last)));
+  }
 }
