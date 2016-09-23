@@ -51,16 +51,14 @@ public class Range implements Iterable<Integer> {
 
   @Override public Iterator<Integer> iterator() {
     return new Iterator<Integer>() {
-      private int pos = start;
-      private boolean last = false;
+      private int current = start;
 
       @Override public boolean hasNext() {
-        return !last;
+        return current <= last;
       }
 
       @Override public Integer next() {
-        last = true;
-        return pos;
+        return current++;
       }
     };
   }
