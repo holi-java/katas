@@ -10,4 +10,8 @@ public class RangeRoundingTest {
   @Test public void startValue() throws Exception {
     assertThat(Range.between(0, 10).round(0), equalTo(0));
   }
+
+  @Test public void lastValue() throws Exception {
+    assertThat(Range.between(0, 10).round(10), equalTo(10));
+  }
 }

@@ -7,6 +7,6 @@ public class Range {
   }
 
   public int round(int number) {
-    return 0;
+    return number;
   }
 }
