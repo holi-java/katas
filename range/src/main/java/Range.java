@@ -2,6 +2,7 @@
  * Created by selonj on 16-9-23.
  */
 public class Range {
+  //todo introduce a Direction enum instead?
   private static final int UP = 1;
   private static final int DOWN = -1;
   private final int start;
