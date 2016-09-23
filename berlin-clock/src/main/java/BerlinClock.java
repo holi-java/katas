@@ -14,26 +14,32 @@ public class BerlinClock {
   private static final int HOURS_IN_DAY = 24;
   private static final int MINUTES_IN_HOUR = 60;
   private static final int SECONDS_IN_MINUTE = 60;
-  private static final Rounding SECONDS_59 = Rounding.between(0, SECONDS_IN_MINUTE - 1);
-  private static final Rounding HOURS24 = Rounding.between(1, HOURS_IN_DAY);
-  private static final Rounding MINUTES_59 = Rounding.between(0, MINUTES_IN_HOUR - 1);
+  private static final int SECONDS_IN_HOUR = MINUTES_IN_HOUR * SECONDS_IN_MINUTE;
+  private static final int START_HOUR = 1;
+  private static final int LAST_HOUR = HOURS_IN_DAY;
 
   private final int hours;
   private final int minutes;
   private final int seconds;
 
   public BerlinClock(int hours, int minutes, int seconds) {
-    this.hours = HOURS24.round(hours + hours(minutes + minutes(seconds)));
-    this.minutes = MINUTES_59.round(minutes + minutes(seconds));
-    this.seconds = SECONDS_59.round(seconds);
+    long totalSeconds = hours * SECONDS_IN_HOUR + minutes * SECONDS_IN_MINUTE + seconds;
+    this.hours = hours(totalSeconds);
+    this.minutes = minutes(totalSeconds);
+    this.seconds = seconds(totalSeconds);
   }
 
-  private int hours(int minutes) {
-    return minutes / MINUTES_IN_HOUR;
+  private int hours(long seconds) {
+    long hours = seconds / SECONDS_IN_HOUR;
+    return (int) (START_HOUR + (LAST_HOUR - START_HOUR + hours) % LAST_HOUR);
   }
 
-  private int minutes(int seconds) {
-    return seconds / SECONDS_IN_MINUTE;
+  private int minutes(long seconds) {
+    return (int) (seconds % SECONDS_IN_HOUR / SECONDS_IN_MINUTE);
+  }
+
+  private int seconds(long totalSeconds) {
+    return (int) (totalSeconds % SECONDS_IN_MINUTE);
   }
 
   public String display() {
