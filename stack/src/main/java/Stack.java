@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
  */
 public class Stack {
   private final Object[] elements;
-  private int i;
+  private int position;
 
   public Stack() {
     elements = new Object[10];
@@ -17,16 +17,16 @@ public class Stack {
 
   public void push(Object element) {
     if (hasNoRemaining()) throw new StackOverflowException();
-    elements[i++] = element;
+    elements[position++] = element;
   }
 
   private boolean hasNoRemaining() {
-    return i == elements.length;
+    return position == elements.length;
   }
 
   public Object pop() {
     if (isEmpty()) throw new NoSuchElementException();
-    return remove(--i);
+    return remove(--position);
   }
 
   private Object remove(int pos) {
@@ -36,6 +36,6 @@ public class Stack {
   }
 
   private boolean isEmpty() {
-    return i == 0;
+    return position == 0;
   }
 }
