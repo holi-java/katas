@@ -8,7 +8,7 @@ public class Stack {
   private int position;
 
   public Stack() {
-    elements = new Object[10];
+    this(10);
   }
 
   public Stack(int capacity) {
