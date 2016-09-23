@@ -13,11 +13,11 @@ public class RangeRoundingTest extends AbstractRangeTest {
   }
 
   @Test public void beforeStart2() throws Exception {
-    assertThat(range.round(range.start() - range.direction() * range.size() - range.direction()), equalTo(range.last()));
+    assertThat(range.round(range.start() - range.direction().shift(range.size() + 1)), equalTo(range.last()));
   }
 
   @Test public void beforeStart() throws Exception {
-    assertThat(range.round(range.start() - range.direction()), equalTo(range.last()));
+    assertThat(range.round(range.start() - range.direction().shift(1)), equalTo(range.last()));
   }
 
   @Test public void start() throws Exception {
@@ -25,11 +25,11 @@ public class RangeRoundingTest extends AbstractRangeTest {
   }
 
   @Test public void next() throws Exception {
-    assertThat(range.round(range.start() + range.direction()), equalTo(range.start() + range.direction()));
+    assertThat(range.round(range.start() + range.direction().shift(1)), equalTo(range.start() + range.direction().shift(1)));
   }
 
   @Test public void beforeLast() throws Exception {
-    assertThat(range.round(range.last() - range.direction()), equalTo(range.last() - range.direction()));
+    assertThat(range.round(range.last() - range.direction().shift(1)), equalTo(range.last() - range.direction().shift(1)));
   }
 
   @Test public void last() throws Exception {
@@ -37,10 +37,10 @@ public class RangeRoundingTest extends AbstractRangeTest {
   }
 
   @Test public void afterLast() throws Exception {
-    assertThat(range.round(range.last() + range.direction()), equalTo(range.start()));
+    assertThat(range.round(range.last() + range.direction().shift(1)), equalTo(range.start()));
   }
 
   @Test public void afterLast2() throws Exception {
-    assertThat(range.round(range.last() + range.direction() * range.size() + range.direction()), equalTo(range.start()));
+    assertThat(range.round(range.last() + range.direction().shift(range.size() + 1)), equalTo(range.start()));
   }
 }

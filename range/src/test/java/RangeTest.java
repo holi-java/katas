@@ -12,7 +12,7 @@ public class RangeTest extends AbstractRangeTest {
   }
 
   @Test public void size() throws Exception {
-    int expectedSize = Math.abs(last - start + range.direction());
+    int expectedSize = Math.abs(last - start + range.direction().shift(1));
     assertThat(range.size(), equalTo(expectedSize));
   }
 

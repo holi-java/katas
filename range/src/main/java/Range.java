@@ -11,7 +11,7 @@ public class Range {
     this.start = start;
     this.last = last;
     direction = Direction.of(start, last);
-    size = direction() * (last - start + direction());
+    size = direction.shift(last - start + direction.shift(1));
   }
 
   public static Range between(int start, int last) {
@@ -19,11 +19,12 @@ public class Range {
   }
 
   public int round(int number) {
-    return start + direction() * offset(number);
+    return start + direction.shift(offset(number));
   }
 
   public int offset(int number) {
-    return (size + direction() * ((number % size) - start)) % size;
+    int signedOffset = direction.shift((number % size) - start);
+    return (size + signedOffset) % size;
   }
 
   public int start() {
@@ -38,8 +39,8 @@ public class Range {
     return size;
   }
 
-  public int direction() {
-    return direction.direction;
+  public Direction direction() {
+    return direction;
   }
 
   @Override public String toString() {

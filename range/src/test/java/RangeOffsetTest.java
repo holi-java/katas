@@ -14,11 +14,11 @@ public class RangeOffsetTest extends AbstractRangeTest {
   }
 
   @Test public void beforeStart2() throws Exception {
-    assertThat(range.offset(range.start() - range.size() * range.direction() - range.direction()), equalTo(range.size() - 1));
+    assertThat(range.offset(range.start() - range.direction().shift(range.size() + 1)), equalTo(range.size() - 1));
   }
 
   @Test public void beforeStart() throws Exception {
-    assertThat(range.offset(range.start() - range.direction()), equalTo(range.size() - 1));
+    assertThat(range.offset(range.start() - range.direction().shift(1)), equalTo(range.size() - 1));
   }
 
   @Test public void start() throws Exception {
@@ -26,11 +26,11 @@ public class RangeOffsetTest extends AbstractRangeTest {
   }
 
   @Test public void next() throws Exception {
-    assertThat(range.offset(range.start() + range.direction()), equalTo(1));
+    assertThat(range.offset(range.start() + range.direction().shift(1)), equalTo(1));
   }
 
   @Test public void beforeLast() throws Exception {
-    assertThat(range.offset(range.last() - range.direction()), equalTo(range.size() - 2));
+    assertThat(range.offset(range.last() - range.direction().shift(1)), equalTo(range.size() - 2));
   }
 
   @Test public void last() throws Exception {
@@ -38,10 +38,10 @@ public class RangeOffsetTest extends AbstractRangeTest {
   }
 
   @Test public void afterLast() throws Exception {
-    assertThat(range.offset(range.last() + range.direction()), equalTo(0));
+    assertThat(range.offset(range.last() + range.direction().shift(1)), equalTo(0));
   }
 
   @Test public void afterLast2() throws Exception {
-    assertThat(range.offset(range.last() + range.size() * range.direction() + range.direction()), equalTo(0));
+    assertThat(range.offset(range.last() + range.direction().shift(range.size() + 1)), equalTo(0));
   }
 }

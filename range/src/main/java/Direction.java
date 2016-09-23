@@ -3,10 +3,14 @@
  */
 public enum Direction {
   UP(1), DOWN(-1);
-  public final int direction;
+  private final int direction;
 
   Direction(int direction) {
     this.direction = direction;
+  }
+
+  public int shift(int amount) {
+    return direction * amount;
   }
 
   public static Direction of(int start, int last) {

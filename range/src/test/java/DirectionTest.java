@@ -7,9 +7,10 @@ import static org.junit.Assert.assertThat;
  * Created by selonj on 16-9-23.
  */
 public class DirectionTest {
-  @Test public void direction() throws Exception {
-    assertThat(Direction.UP.direction, equalTo(1));
-    assertThat(Direction.DOWN.direction, equalTo(-1));
+
+  @Test public void shift() throws Exception {
+    assertThat(Direction.UP.shift(2), equalTo(2));
+    assertThat(Direction.DOWN.shift(2), equalTo(-2));
   }
 
   @Test public void down() throws Exception {
