@@ -4,11 +4,12 @@ import java.util.NoSuchElementException;
  * Created by selonj on 16-9-24.
  */
 public class Stack {
+  private static final int DEFAULT_CAPACITY = 10;
   private final Object[] elements;
   private int position;
 
   public Stack() {
-    this(10);
+    this(DEFAULT_CAPACITY);
   }
 
   public Stack(int capacity) {
