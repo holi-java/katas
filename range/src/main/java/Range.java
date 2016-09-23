@@ -17,14 +17,11 @@ public class Range {
   }
 
   public int round(int number) {
-    if (number < 0) {
-      return round(offset(size, number));
-    }
-    return offset(start, size + number - start);
+    return start + offset(number);
   }
 
-  private int offset(int offset, int number) {
-    return offset + number % size;
+  public int offset(int number) {
+    return (size + (number % size) - start) % size;
   }
 
   public int start() {
