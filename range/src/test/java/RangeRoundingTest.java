@@ -19,4 +19,9 @@ public class RangeRoundingTest {
   @Test public void afterLastValueShouldBeRounded() throws Exception {
     assertThat(Range.between(0, 10).round(11), equalTo(0));
   }
+
+  @Test public void beforeStartValueShouldBeRounded() throws Exception {
+    assertThat(Range.between(0, 10).round(-1), equalTo(10));
+    assertThat(Range.between(0, 10).round(-1 - 11), equalTo(10));
+  }
 }
