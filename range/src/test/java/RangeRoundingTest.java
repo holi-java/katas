@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -6,7 +7,7 @@ import static org.junit.Assert.assertThat;
 /**
  * Created by selonj on 16-9-23.
  */
-
+@Ignore
 public class RangeRoundingTest extends AbstractRangeTest {
 
   public RangeRoundingTest(int start, int last) {
