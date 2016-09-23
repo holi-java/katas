@@ -13,4 +13,12 @@ public class RangeTest {
 
     assertThat(range.size(), equalTo(11));
   }
+
+  @Test public void start() throws Exception {
+    assertThat(Range.between(0, 10).start(), equalTo(0));
+  }
+
+  @Test public void last() throws Exception {
+    assertThat(Range.between(0, 10).last(), equalTo(10));
+  }
 }

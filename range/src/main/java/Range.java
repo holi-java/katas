@@ -23,6 +23,14 @@ public class Range {
     return number % size;
   }
 
+  public int start() {
+    return start;
+  }
+
+  public int last() {
+    return last;
+  }
+
   public int size() {
     return size;
   }
