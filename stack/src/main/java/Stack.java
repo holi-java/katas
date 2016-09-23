@@ -26,8 +26,9 @@ public class Stack {
 
   public Object pop() {
     if (isEmpty()) throw new NoSuchElementException();
-    //todo:how to test element has released from stack?
-    return elements[--i];
+    Object element = elements[--i];
+    elements[i] = null;
+    return element;
   }
 
   private boolean isEmpty() {
