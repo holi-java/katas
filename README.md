@@ -13,7 +13,17 @@
 - [Bowling Game](bowling-game)
 - [Berlin Clock](berlin-clock)
 
-#Summary 
+
+# How to kick start a kata
+
+Kick start a kata from command below:
+
+```bash
+git clone https://github.com/holi-java/katas --single-branch --branch init
+```
+
+
+# Summary 
 
 TDD gives us:
 - Get more feedback if I make the steps as small as I can.
