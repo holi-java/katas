@@ -13,7 +13,7 @@ public class Range {
     this.start = start;
     this.last = last;
     direction = start < last ? UP : DOWN;
-    size = Math.abs(last - start + direction);
+    size = direction * (last - start + direction);
   }
 
   public static Range between(int start, int last) {
