@@ -2,14 +2,18 @@
  * Created by selonj on 16-9-23.
  */
 public class Range {
+  private static final int UP = 1;
+  private static final int DOWN = -1;
   private final int start;
   private final int last;
   private final int size;
+  private int direction;
 
   public Range(int start, int last) {
     this.start = start;
     this.last = last;
-    size = last - start + 1;
+    direction = start < last ? UP : DOWN;
+    size = Math.abs(last - start + direction);
   }
 
   public static Range between(int start, int last) {
@@ -34,6 +38,10 @@ public class Range {
 
   public int size() {
     return size;
+  }
+
+  public int direction() {
+    return direction;
   }
 
   @Override public String toString() {

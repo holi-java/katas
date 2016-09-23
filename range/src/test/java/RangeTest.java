@@ -9,9 +9,8 @@ import static org.junit.Assert.assertThat;
 public class RangeTest {
 
   @Test public void size() throws Exception {
-    Range range = Range.between(0, 10);
-
-    assertThat(range.size(), equalTo(11));
+    assertThat(Range.between(0, 10).size(), equalTo(11));
+    assertThat(Range.between(10, 0).size(), equalTo(11));
   }
 
   @Test public void start() throws Exception {
@@ -20,5 +19,10 @@ public class RangeTest {
 
   @Test public void last() throws Exception {
     assertThat(Range.between(0, 10).last(), equalTo(10));
+  }
+
+  @Test public void direction() throws Exception {
+    assertThat(Range.between(0, 10).direction(), equalTo(1));
+    assertThat(Range.between(10, 0).direction(), equalTo(-1));
   }
 }
