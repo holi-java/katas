@@ -24,4 +24,8 @@ public class RangeEqualityTest {
   @Test public void doesNotEqualsToNull() throws Exception {
     assertThat(Range.between(1, 10), not(equalTo(null)));
   }
+
+  @Test public void doesNotEqualsToOtherTypes() throws Exception {
+    assertThat(Range.between(1, 10), not(equalTo(1)));
+  }
 }
