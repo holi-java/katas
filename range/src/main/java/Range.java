@@ -34,4 +34,8 @@ public class Range {
   public int size() {
     return size;
   }
+
+  @Override public String toString() {
+    return "[" + start + "," + last + "]";
+  }
 }
