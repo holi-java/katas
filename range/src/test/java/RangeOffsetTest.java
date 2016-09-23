@@ -16,4 +16,8 @@ public class RangeOffsetTest extends AbstractRangeTest {
   @Test public void start() throws Exception {
     assertThat(range.offset(range.start()), equalTo(0));
   }
+
+  @Test public void next() throws Exception {
+    assertThat(range.offset(range.start() + range.direction()), equalTo(1));
+  }
 }
