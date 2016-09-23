@@ -29,4 +29,16 @@ public class StackTest {
       assertTrue(true);
     }
   }
+
+  @Test public void throwsStackOverflowExceptionIfTheStackHasNoRemainingWhenPushingElementIntoStack() throws Exception {
+    Stack stack = new Stack(1);
+    stack.push("one");
+
+    try {
+      stack.push("another");
+      fail("stack is empty");
+    } catch (StackOverflowException expected) {
+      assertTrue(true);
+    }
+  }
 }
