@@ -17,10 +17,9 @@ public class Range {
   }
 
   public int round(int number) {
-    return round0(size() + round0(number));
-  }
-
-  private int round0(int number) {
+    if (number < 0) {
+      return round(size() + number % size());
+    }
     return number % size();
   }
 
