@@ -11,6 +11,7 @@
 - [Unique Sorted Array](unique-sorted-array)
 - [Array Enumeration](array-enumeration)
 - [Bowling Game](bowling-game)
+- [Berlin Clock](berlin-clock)
 
 #Summary 
 
